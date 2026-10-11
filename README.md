@@ -15,13 +15,13 @@ Configure Claude Desktop, Cursor, or Windsurf in 5 seconds directly from your te
 
 ```bash
 # Launch interactive terminal setup
-npx mcp-init
+npx mcp-serverlist # (or: npx mcp-init)
 
 # Or 1-click install the Developer Pack into Claude Desktop
-npx mcp-init --client claude --pack dev
+npx mcp-serverlist --client claude --pack dev
 
 # Add PostgreSQL & GitHub directly to Cursor IDE
-npx mcp-init --client cursor --add postgres,github
+npx mcp-serverlist --client cursor --add postgres,github
 ```
 ---
 

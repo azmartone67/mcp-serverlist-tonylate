@@ -25,7 +25,8 @@ Manually configuring Model Context Protocol servers in local AI clients is error
 Run directly with `npx` (no installation required):
 
 ```bash
-npx mcp-init
+npx mcp-serverlist
+# or: npx mcp-init
 ```
 
 The interactive wizard will:
@@ -39,13 +40,13 @@ The interactive wizard will:
 
 ### 1. Configure Claude Desktop with the Developer Pack
 ```bash
-npx mcp-init --client claude --pack dev
+npx mcp-serverlist --client claude --pack dev
 ```
 *Installs PostgreSQL + GitHub + Local Filesystem + Puppeteer.*
 
 ### 2. Add PostgreSQL and GitHub to Cursor IDE
 ```bash
-npx mcp-init --client cursor --add postgres,github
+npx mcp-serverlist --client cursor --add postgres,github
 ```
 
 ### 3. Add Web Scraping pack to Windsurf

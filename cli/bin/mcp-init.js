@@ -53,7 +53,8 @@ function showHelp() {
   banner();
   console.log(`
 ${c.bold}USAGE:${c.reset}
-  npx mcp-init [OPTIONS]
+  npx mcp-serverlist [OPTIONS]
+  (or: npx mcp-init [OPTIONS])
 
 ${c.bold}OPTIONS:${c.reset}
   --client <name>     Target client: claude | cursor | windsurf | cline | local
