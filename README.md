@@ -13,7 +13,7 @@
 
 Configure Claude Desktop, Cursor, or Windsurf in 5 seconds directly from your terminal:
 
-\\ash
+```bash
 # Launch interactive terminal setup
 npx mcp-init
 
@@ -22,7 +22,7 @@ npx mcp-init --client claude --pack dev
 
 # Add PostgreSQL & GitHub directly to Cursor IDE
 npx mcp-init --client cursor --add postgres,github
-\
+```
 ---
 
 ## 📑 Table of Contents
