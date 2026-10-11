@@ -9,9 +9,24 @@
 > An open-source companion catalog, full-index matrix, and client configuration generator for the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
 > **Explore 626 verified community & official MCP servers** created by **570 open-source authors** and generate copy-paste ready configuration files in 1 click at **[https://mcp-serverlist.com](https://mcp-serverlist.com)**.
 
+### ⚡ CLI Quickstart: Zero-Install 1-Click Setup
+
+Configure Claude Desktop, Cursor, or Windsurf in 5 seconds directly from your terminal:
+
+\\ash
+# Launch interactive terminal setup
+npx mcp-init
+
+# Or 1-click install the Developer Pack into Claude Desktop
+npx mcp-init --client claude --pack dev
+
+# Add PostgreSQL & GitHub directly to Cursor IDE
+npx mcp-init --client cursor --add postgres,github
+\
 ---
 
 ## 📑 Table of Contents
+- [⚡ CLI Quickstart (npx mcp-init)](#-cli-quickstart-zero-install-1-click-setup)
 
 - [Why MCP ServerList?](#-why-mcp-serverlist)
 - [Interactive 1-Click Config Generator](#-interactive-1-click-config-generator)

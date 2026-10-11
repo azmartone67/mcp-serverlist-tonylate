@@ -1,0 +1,38 @@
+{
+  "name": "mcp-init",
+  "version": "1.0.0",
+  "description": "1-Click Model Context Protocol (MCP) Client Config Generator for Claude Desktop, Cursor, and Windsurf",
+  "main": "bin/mcp-init.js",
+  "bin": {
+    "mcp-init": "./bin/mcp-init.js"
+  },
+  "scripts": {
+    "start": "node bin/mcp-init.js",
+    "test": "node bin/mcp-init.js --help"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude-desktop",
+    "cursor",
+    "windsurf",
+    "cline",
+    "mcp-servers",
+    "ai-tools",
+    "config-generator",
+    "mcp-serverlist"
+  ],
+  "author": "MCP ServerList Team <contact@mcp-serverlist.com>",
+  "homepage": "https://mcp-serverlist.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonylate520/mcp-serverlist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tonylate520/mcp-serverlist/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
