@@ -1,16 +1,17 @@
 # Model Context Protocol (MCP) ServerList & Interactive Config Generator 🚀
 
-[![Website](https://img.shields.io/badge/🌐_Official_Directory-mcp--serverlist.com-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mcp-serverlist.com)
+[![Website](https://img.shields.io/badge/🌐_Official_Directory-620+_Servers-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mcp-serverlist.com)
+[![Verified Authors](https://img.shields.io/badge/👥_Authors-570+_Recognized-10b981?style=for-the-badge&logo=github&logoColor=white)](https://mcp-serverlist.com)
 [![1-Click Config Generator](https://img.shields.io/badge/⚡_Config_Generator-1--Click-059669?style=for-the-badge&logo=anthropic&logoColor=white)](https://mcp-serverlist.com/config-generator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge)](LICENSE)
 [![Submit Server](https://img.shields.io/badge/Submit_Server-Instant_Indexing-7c3aed?style=for-the-badge)](https://mcp-serverlist.com/submit)
 
-> An open-source companion catalog and interactive client configuration matrix for the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).  
-> **Explore 170+ verified community & official MCP servers** and generate copy-paste ready configuration files in 1 click at **[https://mcp-serverlist.com](https://mcp-serverlist.com)**.
+> An open-source companion catalog, full-index matrix, and client configuration generator for the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
+> **Explore 626 verified community & official MCP servers** created by **570 open-source authors** and generate copy-paste ready configuration files in 1 click at **[https://mcp-serverlist.com](https://mcp-serverlist.com)**.
 
 ---
 
-## 📑 Contents
+## 📑 Table of Contents
 
 - [Why MCP ServerList?](#-why-mcp-serverlist)
 - [Interactive 1-Click Config Generator](#-interactive-1-click-config-generator)
@@ -18,13 +19,14 @@
   - [Claude Desktop](#1-claude-desktop-claude_desktop_configjson)
   - [Cursor IDE](#2-cursor-ide-cursormcpjson)
   - [Windsurf](#3-windsurf-mcp_configjson)
-  - [Cline / Roo-Code](#4-cline--roo-code)
-- [Curated MCP Servers Matrix](#-curated-mcp-servers-matrix)
-  - [🛠️ Developer Tools & DevOps](#-developer-tools--devops)
-  - [🗄️ Databases & Storage](#️-databases--storage)
-  - [🌐 Web Browsing & Search](#-web-browsing--search)
-  - [⚡ Productivity & Workspaces](#-productivity--workspaces)
-  - [🤖 AI Models, Reasoning & Memory](#-ai-models-reasoning--memory)
+  - [Cline / Roo-Code](#4-cline--roo-code-cline_mcp_settingsjson)
+- [Full MCP Servers Matrix (626 Servers / 570 Authors)](#-full-mcp-servers-matrix)
+  - [🛠️ Developer Tools & DevOps (119)](#-developer-tools-devops)
+  - [🗄️ Databases & Storage (93)](#-databases-storage)
+  - [🌐 Web Browsing & Search / Scraping (103)](#-web-browsing-search-scraping)
+  - [⚡ Productivity & Workspaces (104)](#-productivity-workspaces)
+  - [💬 Communication & CRM (98)](#-communication-crm)
+  - [🧠 AI Models, Memory & Data (109)](#-ai-models-memory-data)
 - [For MCP Server Developers (Badges & Inclusion)](#-for-mcp-server-developers)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -39,180 +41,743 @@ Configuring Model Context Protocol servers in local AI clients can be frustratin
 3. **Scattered documentation** across hundreds of independent GitHub repositories.
 
 **[MCP ServerList (mcp-serverlist.com)](https://mcp-serverlist.com)** solves this by offering:
-- 🔍 **Live Search & Filter**: Search 170+ servers by category, transport type (stdio / SSE), and runtime (Node.js, Python, Go).
-- ⚡ **1-Click Config Generator**: Visually toggle servers, fill required environment parameters, and download or copy ready-to-run JSON snippets.
-- 🛡️ **Verified Health & Compatibility**: Live test status badges and direct links to official repositories.
+- 🔍 **Live Search & Filter**: Search 626+ servers across 6 key domains by transport type (stdio / SSE) and runtime.
+- ⚡ **1-Click Config Generator**: Visually toggle servers, customize environment arguments, and download ready-to-run JSON snippets.
+- 🛡️ **Author Recognition & Attribution**: Direct attribution to all 570+ open-source creators with verified repo links.
 
 ---
 
 ## ⚡ Interactive 1-Click Config Generator
 
-👉 **[Try the Visual Config Generator Online](https://mcp-serverlist.com/config-generator)**
+👉 **[Launch the Visual Config Generator Online](https://mcp-serverlist.com/config-generator)**
 
 Instead of manually editing JSON files, select the servers you need and get verified configuration snippets instantly for:
-- **Claude Desktop**
-- **Cursor IDE**
-- **Windsurf**
-- **Cline (VS Code)**
+- **Claude Desktop** (`claude_desktop_config.json`)
+- **Cursor IDE** (`~/.cursor/mcp.json`)
+- **Windsurf** (`~/.codeium/windsurf/mcp_config.json`)
+- **Cline / Roo-Code** (`cline_mcp_settings.json`)
 
 ---
 
 ## 🚀 Client Quickstart Configurations
 
 ### 1. Claude Desktop (`claude_desktop_config.json`)
-
-**File Location:**
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/Desktop",
-        "/Users/username/Projects"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"]
     },
-    "fetch": {
-      "command": "uvx",
-      "args": ["mcp-server-fetch"]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
-      }
-    }
-  }
-}
-```
-
----
-
-### 2. Cursor IDE (`.cursor/mcp.json`)
-
-**File Location:** In your project root under `.cursor/mcp.json` or in Cursor Settings > Features > MCP.
-
-```json
-{
-  "mcpServers": {
     "postgres": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost/mydb"
-      ]
-    },
-    "brave-search": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
-      "env": {
-        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
-      }
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://user:pass@localhost:5432/dbname"]
     }
   }
 }
 ```
 
----
+### 2. Cursor IDE (`~/.cursor/mcp.json`)
+Open Cursor Settings -> Features -> MCP Servers, or edit `~/.cursor/mcp.json` directly.
 
 ### 3. Windsurf (`mcp_config.json`)
+Place your server configs under `~/.codeium/windsurf/mcp_config.json`.
 
-**File Location:** `~/.codeium/windsurf/mcp_config.json`
-
-```json
-{
-  "mcpServers": {
-    "sqlite": {
-      "command": "uvx",
-      "args": ["mcp-server-sqlite", "--db-path", "/path/to/database.db"]
-    },
-    "puppeteer": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
-    }
-  }
-}
-```
+### 4. Cline / Roo-Code (`cline_mcp_settings.json`)
+Access MCP Settings from the Cline VS Code extension panel.
 
 ---
 
-### 4. Cline / Roo-Code
+## 🌐 Full MCP Servers Matrix
 
-In VS Code Cline extension settings, edit `cline_mcp_settings.json` with the identical `"mcpServers"` object.
+Total Servers: **626** | Unique Authors: **570** | Updated Daily.
+
+### 🛠️ Developer Tools & DevOps (119 Servers)
+
+> Code execution, cloud platforms, CLI utilities, version control, and infrastructure automation.  
+> 🔗 *Browse & filter all 119 servers online: [mcp-serverlist.com/category/dev-tools](https://mcp-serverlist.com/category/dev-tools)*
+
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**Javaguide MCP**](https://mcp-serverlist.com/mcp/javaguide) | @Snailclimb | [JavaGuide](https://github.com/Snailclimb/JavaGuide) | Node.js | `npx -y @modelcontextprotocol/server-javaguide` | [⚡ Config](https://mcp-serverlist.com/mcp/javaguide) |
+| [**Netdata MCP**](https://mcp-serverlist.com/mcp/netdata) | @netdata | [netdata](https://github.com/netdata/netdata) | Go | `go run github.com/netdata/netdata` | [⚡ Config](https://mcp-serverlist.com/mcp/netdata) |
+| [**Rea MCP**](https://mcp-serverlist.com/mcp/rea) | @morluto | [rea](https://github.com/morluto/rea) | Node.js | `npx -y @modelcontextprotocol/server-rea` | [⚡ Config](https://mcp-serverlist.com/mcp/rea) |
+| [**Context7 MCP**](https://mcp-serverlist.com/mcp/context7) | @upstash | [context7](https://github.com/upstash/context7) | Node.js | `npx -y @modelcontextprotocol/server-context7` | [⚡ Config](https://mcp-serverlist.com/mcp/context7) |
+| [**Trendradar MCP**](https://mcp-serverlist.com/mcp/trendradar) | @sansan0 | [TrendRadar](https://github.com/sansan0/TrendRadar) | Python | `uvx mcp-server-trendradar` | [⚡ Config](https://mcp-serverlist.com/mcp/trendradar) |
+| [**Chrome Devtools MCP**](https://mcp-serverlist.com/mcp/chrome-devtools-mcp) | @ChromeDevTools | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Node.js | `npx -y @modelcontextprotocol/server-chrome-devtools-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/chrome-devtools-mcp) |
+| [**Kong MCP**](https://mcp-serverlist.com/mcp/kong) | @Kong | [kong](https://github.com/Kong/kong) | Node.js | `npx -y @modelcontextprotocol/server-kong` | [⚡ Config](https://mcp-serverlist.com/mcp/kong) |
+| [**Astrbot MCP**](https://mcp-serverlist.com/mcp/astrbot) | @AstrBotDevs | [AstrBot](https://github.com/AstrBotDevs/AstrBot) | Python | `uvx mcp-server-astrbot` | [⚡ Config](https://mcp-serverlist.com/mcp/astrbot) |
+| [**Codewhale MCP**](https://mcp-serverlist.com/mcp/codewhale) | @codewhale-hq | [Codewhale](https://github.com/codewhale-hq/Codewhale) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/codewhale) |
+| [**Tooljet MCP**](https://mcp-serverlist.com/mcp/tooljet) | @ToolJet | [ToolJet](https://github.com/ToolJet/ToolJet) | Node.js | `npx -y @modelcontextprotocol/server-tooljet` | [⚡ Config](https://mcp-serverlist.com/mcp/tooljet) |
+| [**Posthog MCP**](https://mcp-serverlist.com/mcp/posthog) | @PostHog | [posthog](https://github.com/PostHog/posthog) | Python | `uvx mcp-server-posthog` | [⚡ Config](https://mcp-serverlist.com/mcp/posthog) |
+| [**Drawdb MCP**](https://mcp-serverlist.com/mcp/drawdb) | @drawdb-io | [drawdb](https://github.com/drawdb-io/drawdb) | Node.js | `npx -y @modelcontextprotocol/server-drawdb` | [⚡ Config](https://mcp-serverlist.com/mcp/drawdb) |
+| [**Pdfmathtranslate MCP**](https://mcp-serverlist.com/mcp/pdfmathtranslate) | @PDFMathTranslate | [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | Python | `uvx mcp-server-pdfmathtranslate` | [⚡ Config](https://mcp-serverlist.com/mcp/pdfmathtranslate) |
+| [**Oh My Pi MCP**](https://mcp-serverlist.com/mcp/oh-my-pi) | @can1357 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | Node.js | `npx -y @modelcontextprotocol/server-oh-my-pi` | [⚡ Config](https://mcp-serverlist.com/mcp/oh-my-pi) |
+| [**Github Mcp**](https://mcp-serverlist.com/mcp/github-mcp-server) | @github | [github-mcp-server](https://github.com/github/github-mcp-server) | Go | `go run github.com/github/github-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/github-mcp-server) |
+| [**Nacos MCP**](https://mcp-serverlist.com/mcp/nacos) | @alibaba | [nacos](https://github.com/alibaba/nacos) | Java | `java -jar nacos-mcp.jar` | [⚡ Config](https://mcp-serverlist.com/mcp/nacos) |
+| [**Signoz MCP**](https://mcp-serverlist.com/mcp/signoz) | @SigNoz | [signoz](https://github.com/SigNoz/signoz) | Node.js | `npx -y @modelcontextprotocol/server-signoz` | [⚡ Config](https://mcp-serverlist.com/mcp/signoz) |
+| [**Code Review Graph MCP**](https://mcp-serverlist.com/mcp/code-review-graph) | @tirth8205 | [code-review-graph](https://github.com/tirth8205/code-review-graph) | Python | `uvx mcp-server-code-review-graph` | [⚡ Config](https://mcp-serverlist.com/mcp/code-review-graph) |
+| [**Serena MCP**](https://mcp-serverlist.com/mcp/serena) | @oraios | [serena](https://github.com/oraios/serena) | Python | `uvx mcp-server-serena` | [⚡ Config](https://mcp-serverlist.com/mcp/serena) |
+| [**Qwen Code MCP**](https://mcp-serverlist.com/mcp/qwen-code) | @QwenLM | [qwen-code](https://github.com/QwenLM/qwen-code) | Node.js | `npx -y @modelcontextprotocol/server-qwen-code` | [⚡ Config](https://mcp-serverlist.com/mcp/qwen-code) |
+| [**Chat2db MCP**](https://mcp-serverlist.com/mcp/chat2db) | @OtterMind | [Chat2DB](https://github.com/OtterMind/Chat2DB) | Java | `java -jar chat2db-mcp.jar` | [⚡ Config](https://mcp-serverlist.com/mcp/chat2db) |
+| [**Dbx MCP**](https://mcp-serverlist.com/mcp/dbx) | @t8y2 | [dbx](https://github.com/t8y2/dbx) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/dbx) |
+| [**Kuboard Press MCP**](https://mcp-serverlist.com/mcp/kuboard-press) | @eip-work | [kuboard-press](https://github.com/eip-work/kuboard-press) | Node.js | `npx -y @modelcontextprotocol/server-kuboard-press` | [⚡ Config](https://mcp-serverlist.com/mcp/kuboard-press) |
+| [**Editor MCP**](https://mcp-serverlist.com/mcp/editor) | @pascalorg | [editor](https://github.com/pascalorg/editor) | Node.js | `npx -y @modelcontextprotocol/server-editor` | [⚡ Config](https://mcp-serverlist.com/mcp/editor) |
+| [**Agents Towards Production MCP**](https://mcp-serverlist.com/mcp/agents-towards-production) | @NirDiamant | [agents-towards-production](https://github.com/NirDiamant/agents-towards-production) | Node.js | `npx -y @modelcontextprotocol/server-agents-towards-production` | [⚡ Config](https://mcp-serverlist.com/mcp/agents-towards-production) |
+| [**Ai Guide MCP**](https://mcp-serverlist.com/mcp/ai-guide) | @liyupi | [ai-guide](https://github.com/liyupi/ai-guide) | Node.js | `npx -y @modelcontextprotocol/server-ai-guide` | [⚡ Config](https://mcp-serverlist.com/mcp/ai-guide) |
+| [**Douyin Tiktok Download Api MCP**](https://mcp-serverlist.com/mcp/douyin-tiktok-download-api) | @Evil0ctal | [Douyin_TikTok_Download_API](https://github.com/Evil0ctal/Douyin_TikTok_Download_API) | Python | `uvx mcp-server-douyin-tiktok-download-api` | [⚡ Config](https://mcp-serverlist.com/mcp/douyin-tiktok-download-api) |
+| [**Jcode MCP**](https://mcp-serverlist.com/mcp/jcode) | @1jehuang | [jcode](https://github.com/1jehuang/jcode) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/jcode) |
+| [**Nuclear MCP**](https://mcp-serverlist.com/mcp/nuclear) | @nukeop | [nuclear](https://github.com/nukeop/nuclear) | Node.js | `npx -y @modelcontextprotocol/server-nuclear` | [⚡ Config](https://mcp-serverlist.com/mcp/nuclear) |
+| [**GitHub Official MCP**](https://mcp-serverlist.com/mcp/github) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Node.js | `npx -y @modelcontextprotocol/server-github` | [⚡ Config](https://mcp-serverlist.com/mcp/github) |
+| [**Local Git Version Control MCP**](https://mcp-serverlist.com/mcp/git) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/git) | Python | `uvx mcp-server-git --repository /path/to/repo` | [⚡ Config](https://mcp-serverlist.com/mcp/git) |
+| [**Sentry Error Tracking MCP**](https://mcp-serverlist.com/mcp/sentry) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry) | Python | `uvx mcp-server-sentry` | [⚡ Config](https://mcp-serverlist.com/mcp/sentry) |
+| [**AWS Cloud Infrastructure MCP**](https://mcp-serverlist.com/mcp/aws-mcp) | @awslabs | [mcp-server-aws](https://github.com/awslabs/mcp-server-aws) | Python | `uvx mcp-server-aws` | [⚡ Config](https://mcp-serverlist.com/mcp/aws-mcp) |
+| [**Cloudflare Developer Platform MCP**](https://mcp-serverlist.com/mcp/cloudflare) | @cloudflare | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | Node.js | `npx -y @cloudflare/mcp-server-cloudflare` | [⚡ Config](https://mcp-serverlist.com/mcp/cloudflare) |
+| [**Vercel Deployment & Domains MCP**](https://mcp-serverlist.com/mcp/vercel) | @tomgrohl | [mcp-server-vercel](https://github.com/tomgrohl/mcp-server-vercel) | Node.js | `npx -y mcp-server-vercel` | [⚡ Config](https://mcp-serverlist.com/mcp/vercel) |
+| [**Docker Engine MCP**](https://mcp-serverlist.com/mcp/docker) | @ckreiling | [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) | Node.js | `npx -y mcp-server-docker` | [⚡ Config](https://mcp-serverlist.com/mcp/docker) |
+| [**Figma Design & Token MCP**](https://mcp-serverlist.com/mcp/figma) | @GLips | [mcp-figma](https://github.com/GLips/mcp-figma) | Node.js | `npx -y mcp-figma` | [⚡ Config](https://mcp-serverlist.com/mcp/figma) |
+| [**Kubernetes Cluster Inspector MCP**](https://mcp-serverlist.com/mcp/kubernetes) | @fluxcd | [mcp-server-kubernetes](https://github.com/fluxcd/mcp-server-kubernetes) | Go | `mcp-server-kubernetes` | [⚡ Config](https://mcp-serverlist.com/mcp/kubernetes) |
+| [**Postman API Testing MCP**](https://mcp-serverlist.com/mcp/postman) | @postmanlabs | [mcp-server-postman](https://github.com/postmanlabs/mcp-server-postman) | Node.js | `npx -y mcp-server-postman` | [⚡ Config](https://mcp-serverlist.com/mcp/postman) |
+| [**Prometheus & Grafana Metrics MCP**](https://mcp-serverlist.com/mcp/prometheus) | @grafana | [mcp-server-prometheus](https://github.com/grafana/mcp-server-prometheus) | Go | `mcp-server-prometheus --prometheus-url http://localhost:9090` | [⚡ Config](https://mcp-serverlist.com/mcp/prometheus) |
+| [**GitLab DevOps Platform MCP**](https://mcp-serverlist.com/mcp/gitlab) | @inovex | [mcp-server-gitlab](https://github.com/inovex/mcp-server-gitlab) | Node.js | `npx -y mcp-server-gitlab` | [⚡ Config](https://mcp-serverlist.com/mcp/gitlab) |
+| [**Datadog Observability MCP**](https://mcp-serverlist.com/mcp/datadog) | @DataDog | [mcp-server-datadog](https://github.com/DataDog/mcp-server-datadog) | Python | `uvx mcp-server-datadog` | [⚡ Config](https://mcp-serverlist.com/mcp/datadog) |
+| [**NPM Package Registry MCP**](https://mcp-serverlist.com/mcp/npm-registry) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/npm) | Node.js | `npx -y @modelcontextprotocol/server-npm` | [⚡ Config](https://mcp-serverlist.com/mcp/npm-registry) |
+| [**SonarQube Code Quality & Security MCP**](https://mcp-serverlist.com/mcp/sonarqube) | @SonarSource | [mcp-server-sonarqube](https://github.com/SonarSource/mcp-server-sonarqube) | Node.js | `npx -y mcp-server-sonarqube` | [⚡ Config](https://mcp-serverlist.com/mcp/sonarqube) |
+| [**Nmlp MCP**](https://mcp-serverlist.com/mcp/nmlp-mcp) | @joshseane | [-nmlp-mcp](https://github.com/joshseane/-nmlp-mcp) | Node.js | `npx -y joshseane/-nmlp-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/nmlp-mcp) |
+| [**Nightmarquee MCP**](https://mcp-serverlist.com/mcp/nightmarquee-mcp) | @ant-dev-lab | [nightmarquee-mcp](https://github.com/ant-dev-lab/nightmarquee-mcp) | Node.js | `npx -y ant-dev-lab/nightmarquee-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/nightmarquee-mcp) |
+| [**Quran Mcp**](https://mcp-serverlist.com/mcp/quran-mcp-server) | @djalal | [quran-mcp-server](https://github.com/djalal/quran-mcp-server) | Node.js | `npx -y djalal/quran-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/quran-mcp-server) |
+| [**Isaac Sim MCP**](https://mcp-serverlist.com/mcp/isaac-sim-mcp) | @omni-mcp | [isaac-sim-mcp](https://github.com/omni-mcp/isaac-sim-mcp) | Node.js | `npx -y omni-mcp/isaac-sim-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/isaac-sim-mcp) |
+| [**Image MCP**](https://mcp-serverlist.com/mcp/image-mcp) | @TOBYCAI | [image-mcp](https://github.com/TOBYCAI/image-mcp) | Python | `uvx image-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/image-mcp) |
+| [**Manim Mcp**](https://mcp-serverlist.com/mcp/manim-mcp-server) | @abhiemj | [manim-mcp-server](https://github.com/abhiemj/manim-mcp-server) | Python | `uvx manim-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/manim-mcp-server) |
+| [**Brandkit MCP**](https://mcp-serverlist.com/mcp/brandkit-mcp) | @ejwhite7 | [brandkit-mcp](https://github.com/ejwhite7/brandkit-mcp) | Node.js | `npx -y ejwhite7/brandkit-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/brandkit-mcp) |
+| [**Mermaid MCP**](https://mcp-serverlist.com/mcp/mermaid-mcp) | @Narasimhaponnada | [mermaid-mcp](https://github.com/Narasimhaponnada/mermaid-mcp) | Node.js | `npx -y Narasimhaponnada/mermaid-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mermaid-mcp) |
+| [**Fatenava MCP**](https://mcp-serverlist.com/mcp/fatenava-mcp) | @fatenava | [fatenava-mcp](https://github.com/fatenava/fatenava-mcp) | Node.js | `npx -y fatenava/fatenava-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/fatenava-mcp) |
+| [**Promptpilot Mcp**](https://mcp-serverlist.com/mcp/promptpilot-mcp-server) | @doctorm333 | [promptpilot-mcp-server](https://github.com/doctorm333/promptpilot-mcp-server) | Node.js | `npx -y doctorm333/promptpilot-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/promptpilot-mcp-server) |
+| [**Imagegen MCP**](https://mcp-serverlist.com/mcp/imagegen-mcp) | @forgemeshlabs | [imagegen-mcp](https://github.com/forgemeshlabs/imagegen-mcp) | Node.js | `npx -y forgemeshlabs/imagegen-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/imagegen-mcp) |
+| [**Shahnameh Mcp**](https://mcp-serverlist.com/mcp/shahnameh-mcp-server) | @aliafsahnoudeh | [shahnameh-mcp-server](https://github.com/aliafsahnoudeh/shahnameh-mcp-server) | Python | `uvx shahnameh-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/shahnameh-mcp-server) |
+| [**Travel Art MCP**](https://mcp-serverlist.com/mcp/travel-art-mcp) | @alexzavialov | [travel-art-mcp](https://github.com/alexzavialov/travel-art-mcp) | Node.js | `npx -y alexzavialov/travel-art-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/travel-art-mcp) |
+| [**Mermaid Mcp**](https://mcp-serverlist.com/mcp/mermaid-mcp-server) | @GittyBurstein | [mermaid-mcp-server](https://github.com/GittyBurstein/mermaid-mcp-server) | Python | `uvx mermaid-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mermaid-mcp-server) |
+| [**Smithsonian MCP**](https://mcp-serverlist.com/mcp/smithsonian-mcp) | @molanojustin | [smithsonian-mcp](https://github.com/molanojustin/smithsonian-mcp) | Python | `uvx smithsonian-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/smithsonian-mcp) |
+| [**Comfy Pilot MCP**](https://mcp-serverlist.com/mcp/comfy-pilot) | @ConstantineB6 | [comfy-pilot](https://github.com/ConstantineB6/comfy-pilot) | Python | `uvx comfy-pilot` | [⚡ Config](https://mcp-serverlist.com/mcp/comfy-pilot) |
+| [**Aidc Ai MCP**](https://mcp-serverlist.com/mcp/aidc-ai-mcp) | @aidc2026ai-melon | [aidc-ai-mcp](https://github.com/aidc2026ai-melon/aidc-ai-mcp) | Node.js | `npx -y aidc2026ai-melon/aidc-ai-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/aidc-ai-mcp) |
+| [**Agreements Api Sdk MCP**](https://mcp-serverlist.com/mcp/agreements-api-sdk) | @CNSLabs | [agreements-api-sdk](https://github.com/CNSLabs/agreements-api-sdk) | Node.js | `npx -y CNSLabs/agreements-api-sdk` | [⚡ Config](https://mcp-serverlist.com/mcp/agreements-api-sdk) |
+| [**Codesign MCP**](https://mcp-serverlist.com/mcp/codesign) | @imgly | [codesign](https://github.com/imgly/codesign) | Node.js | `npx -y imgly/codesign` | [⚡ Config](https://mcp-serverlist.com/mcp/codesign) |
+| [**Blender MCP**](https://mcp-serverlist.com/mcp/blender-mcp) | @ahujasid | [blender-mcp](https://github.com/ahujasid/blender-mcp) | Python | `uvx blender-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/blender-mcp) |
+| [**Network Sketcher MCP**](https://mcp-serverlist.com/mcp/network-sketcher) | @cisco-open | [network-sketcher](https://github.com/cisco-open/network-sketcher) | Python | `uvx network-sketcher` | [⚡ Config](https://mcp-serverlist.com/mcp/network-sketcher) |
+| [**Anilist MCP**](https://mcp-serverlist.com/mcp/anilist-mcp) | @yuna0x0 | [anilist-mcp](https://github.com/yuna0x0/anilist-mcp) | Node.js | `npx -y yuna0x0/anilist-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/anilist-mcp) |
+| [**Saglitzdesign MCP**](https://mcp-serverlist.com/mcp/saglitzdesign-mcp) | @HalidSaglam | [saglitzdesign-mcp](https://github.com/HalidSaglam/saglitzdesign-mcp) | Node.js | `npx -y HalidSaglam/saglitzdesign-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/saglitzdesign-mcp) |
+| [**Spotify Bulk Actions MCP**](https://mcp-serverlist.com/mcp/spotify-bulk-actions-mcp) | @khglynn | [spotify-bulk-actions-mcp](https://github.com/khglynn/spotify-bulk-actions-mcp) | Python | `uvx spotify-bulk-actions-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/spotify-bulk-actions-mcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-4) | @OctoEverywhere | [mcp](https://github.com/OctoEverywhere/mcp) | Node.js | `npx -y OctoEverywhere/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-4) |
+| [**Fal Mcp**](https://mcp-serverlist.com/mcp/fal-mcp-server) | @raveenb | [fal-mcp-server](https://github.com/raveenb/fal-mcp-server) | Python | `uvx fal-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/fal-mcp-server) |
+| [**Diagrams Mcp App Core**](https://mcp-serverlist.com/mcp/diagrams-mcp-app-core) | @RedHold | [diagrams-mcp-app-core](https://github.com/RedHold/diagrams-mcp-app-core) | Node.js | `npx -y RedHold/diagrams-mcp-app-core` | [⚡ Config](https://mcp-serverlist.com/mcp/diagrams-mcp-app-core) |
+| [**Creative Claw Marketplace MCP**](https://mcp-serverlist.com/mcp/creative-claw-marketplace) | @CreativeClawCo | [creative-claw-marketplace](https://github.com/CreativeClawCo/creative-claw-marketplace) | Node.js | `npx -y CreativeClawCo/creative-claw-marketplace` | [⚡ Config](https://mcp-serverlist.com/mcp/creative-claw-marketplace) |
+| [**Mcpflux**](https://mcp-serverlist.com/mcp/fluxmcp) | @AceDataCloud | [FluxMCP](https://github.com/AceDataCloud/FluxMCP) | Python | `uvx FluxMCP` | [⚡ Config](https://mcp-serverlist.com/mcp/fluxmcp) |
+| [**Picoberry MCP**](https://mcp-serverlist.com/mcp/picoberry-mcp) | @UModeler | [picoberry-mcp](https://github.com/UModeler/picoberry-mcp) | Node.js | `npx -y UModeler/picoberry-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/picoberry-mcp) |
+| [**Gen Image MCP**](https://mcp-serverlist.com/mcp/gen-image-mcp) | @yuluo688 | [gen-image-mcp](https://github.com/yuluo688/gen-image-mcp) | Node.js | `npx -y yuluo688/gen-image-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/gen-image-mcp) |
+| [**Mcpnanobanana**](https://mcp-serverlist.com/mcp/mcpnanobanana) | @AceDataCloud | [MCPNanoBanana](https://github.com/AceDataCloud/MCPNanoBanana) | Python | `uvx MCPNanoBanana` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpnanobanana) |
+| [**Davinci Resolve Ai Bridge MCP**](https://mcp-serverlist.com/mcp/davinci-resolve-ai-bridge-mcp) | @flamexnreal | [davinci-resolve-ai-bridge-mcp](https://github.com/flamexnreal/davinci-resolve-ai-bridge-mcp) | Python | `uvx davinci-resolve-ai-bridge-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/davinci-resolve-ai-bridge-mcp) |
+| [**Ai Diagram Maker MCP**](https://mcp-serverlist.com/mcp/ai-diagram-maker-mcp) | @erajasekar | [ai-diagram-maker-mcp](https://github.com/erajasekar/ai-diagram-maker-mcp) | Node.js | `npx -y erajasekar/ai-diagram-maker-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ai-diagram-maker-mcp) |
+| [**Mcpseedream**](https://mcp-serverlist.com/mcp/seedreammcp) | @AceDataCloud | [SeedreamMCP](https://github.com/AceDataCloud/SeedreamMCP) | Python | `uvx SeedreamMCP` | [⚡ Config](https://mcp-serverlist.com/mcp/seedreammcp) |
+| [**Tarot Mcp**](https://mcp-serverlist.com/mcp/tarot-mcp-server) | @gokimedia | [tarot-mcp-server](https://github.com/gokimedia/tarot-mcp-server) | Node.js | `npx -y gokimedia/tarot-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/tarot-mcp-server) |
+| [**Meigen Ai Design MCP**](https://mcp-serverlist.com/mcp/meigen-ai-design-mcp) | @jau123 | [MeiGen-AI-Design-MCP](https://github.com/jau123/MeiGen-AI-Design-MCP) | Node.js | `npx -y jau123/MeiGen-AI-Design-MCP` | [⚡ Config](https://mcp-serverlist.com/mcp/meigen-ai-design-mcp) |
+| [**Davinci Resolve MCP**](https://mcp-serverlist.com/mcp/davinci-resolve-mcp) | @samuelgursky | [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) | Python | `uvx davinci-resolve-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/davinci-resolve-mcp) |
+| [**Humanizer Ru MCP**](https://mcp-serverlist.com/mcp/humanizer-ru) | @Vladimir-Human | [humanizer-ru](https://github.com/Vladimir-Human/humanizer-ru) | Node.js | `npx -y Vladimir-Human/humanizer-ru` | [⚡ Config](https://mcp-serverlist.com/mcp/humanizer-ru) |
+| [**Aetumi MCP**](https://mcp-serverlist.com/mcp/aetumi-mcp) | @AETumiApp | [aetumi-mcp](https://github.com/AETumiApp/aetumi-mcp) | Node.js | `npx -y AETumiApp/aetumi-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/aetumi-mcp) |
+| [**Reaper MCP**](https://mcp-serverlist.com/mcp/reaper-mcp) | @TwelveTake-Studios | [reaper-mcp](https://github.com/TwelveTake-Studios/reaper-mcp) | Python | `uvx reaper-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/reaper-mcp) |
+| [**Nakkas MCP**](https://mcp-serverlist.com/mcp/nakkas) | @arikusi | [nakkas](https://github.com/arikusi/nakkas) | Node.js | `npx -y arikusi/nakkas` | [⚡ Config](https://mcp-serverlist.com/mcp/nakkas) |
+| [**Elicitly MCP**](https://mcp-serverlist.com/mcp/elicitly) | @elicitly | [elicitly](https://github.com/elicitly/elicitly) | Node.js | `npx -y elicitly/elicitly` | [⚡ Config](https://mcp-serverlist.com/mcp/elicitly) |
+| [**Opticquiz MCP**](https://mcp-serverlist.com/mcp/opticquiz-mcp) | @vince-gonzalez | [opticquiz-mcp](https://github.com/vince-gonzalez/opticquiz-mcp) | Node.js | `npx -y vince-gonzalez/opticquiz-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/opticquiz-mcp) |
+| [**Spotify MCP**](https://mcp-serverlist.com/mcp/spotify-mcp-1) | @XavierFabregat | [spotify-mcp](https://github.com/XavierFabregat/spotify-mcp) | Node.js | `npx -y XavierFabregat/spotify-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/spotify-mcp-1) |
+| [**Oorlogsbronnen MCP**](https://mcp-serverlist.com/mcp/oorlogsbronnen-mcp) | @r-huijts | [oorlogsbronnen-mcp](https://github.com/r-huijts/oorlogsbronnen-mcp) | Node.js | `npx -y r-huijts/oorlogsbronnen-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/oorlogsbronnen-mcp) |
+| [**Icogenie MCP**](https://mcp-serverlist.com/mcp/icogenie-mcp) | @albertnahas | [icogenie-mcp](https://github.com/albertnahas/icogenie-mcp) | Node.js | `npx -y albertnahas/icogenie-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/icogenie-mcp) |
+| [**Figwright MCP**](https://mcp-serverlist.com/mcp/figwright) | @awdr74100 | [figwright](https://github.com/awdr74100/figwright) | Node.js | `npx -y awdr74100/figwright` | [⚡ Config](https://mcp-serverlist.com/mcp/figwright) |
+| [**Build123d MCP**](https://mcp-serverlist.com/mcp/build123d-mcp) | @pzfreo | [build123d-mcp](https://github.com/pzfreo/build123d-mcp) | Python | `uvx build123d-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/build123d-mcp) |
+| [**Quokkapix MCP**](https://mcp-serverlist.com/mcp/quokkapix-mcp) | @quokkapix | [quokkapix-mcp](https://github.com/quokkapix/quokkapix-mcp) | Node.js | `npx -y quokkapix/quokkapix-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/quokkapix-mcp) |
+| [**Photopea Mcp**](https://mcp-serverlist.com/mcp/photopea-mcp-server) | @attalla1 | [photopea-mcp-server](https://github.com/attalla1/photopea-mcp-server) | Node.js | `npx -y attalla1/photopea-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/photopea-mcp-server) |
+| [**Ani MCP**](https://mcp-serverlist.com/mcp/ani-mcp) | @gavxm | [ani-mcp](https://github.com/gavxm/ani-mcp) | Node.js | `npx -y gavxm/ani-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ani-mcp) |
+| [**Bazi MCP**](https://mcp-serverlist.com/mcp/bazi-mcp) | @cantian-ai | [bazi-mcp](https://github.com/cantian-ai/bazi-mcp) | Node.js | `npx -y cantian-ai/bazi-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/bazi-mcp) |
+| [**Labelgrid MCP**](https://mcp-serverlist.com/mcp/labelgrid-mcp) | @labelgrid | [labelgrid-mcp](https://github.com/labelgrid/labelgrid-mcp) | Node.js | `npx -y labelgrid/labelgrid-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/labelgrid-mcp) |
+| [**Runcomfy MCP**](https://mcp-serverlist.com/mcp/runcomfy-mcp) | @runcomfy-com | [runcomfy-mcp](https://github.com/runcomfy-com/runcomfy-mcp) | Python | `uvx runcomfy-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/runcomfy-mcp) |
+| [**Jgs Magic Sysmlv1 MCP**](https://mcp-serverlist.com/mcp/jgs-magic-sysmlv1-mcp) | @jgsystemsconsulting | [jgs-magic-sysmlv1-mcp](https://github.com/jgsystemsconsulting/jgs-magic-sysmlv1-mcp) | Python | `uvx jgs-magic-sysmlv1-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/jgs-magic-sysmlv1-mcp) |
+| [**Aseprite MCP**](https://mcp-serverlist.com/mcp/aseprite-mcp) | @diivi | [aseprite-mcp](https://github.com/diivi/aseprite-mcp) | Python | `uvx aseprite-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/aseprite-mcp) |
+| [**Jupytercad MCP**](https://mcp-serverlist.com/mcp/jupytercad-mcp) | @asmith26 | [jupytercad-mcp](https://github.com/asmith26/jupytercad-mcp) | Python | `uvx jupytercad-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/jupytercad-mcp) |
+| [**Tentra MCP**](https://mcp-serverlist.com/mcp/tentra-mcp) | @rdanieli | [tentra-mcp](https://github.com/rdanieli/tentra-mcp) | Node.js | `npx -y rdanieli/tentra-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/tentra-mcp) |
+| [**Discogs Mcp**](https://mcp-serverlist.com/mcp/discogs-mcp-server) | @cswkim | [discogs-mcp-server](https://github.com/cswkim/discogs-mcp-server) | Node.js | `npx -y cswkim/discogs-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/discogs-mcp-server) |
+| [**Thiri MCP**](https://mcp-serverlist.com/mcp/thiri-mcp) | @BluesPrince | [thiri-mcp](https://github.com/BluesPrince/thiri-mcp) | Node.js | `npx -y BluesPrince/thiri-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/thiri-mcp) |
+| [**A11y Toolkit MCP**](https://mcp-serverlist.com/mcp/a11y-toolkit) | @kinti | [a11y-toolkit](https://github.com/kinti/a11y-toolkit) | Python | `uvx a11y-toolkit` | [⚡ Config](https://mcp-serverlist.com/mcp/a11y-toolkit) |
+| [**Vicsee Mcp**](https://mcp-serverlist.com/mcp/vicsee-mcp-server) | @vicseeai | [vicsee-mcp-server](https://github.com/vicseeai/vicsee-mcp-server) | Node.js | `npx -y vicseeai/vicsee-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/vicsee-mcp-server) |
+| [**Kavel MCP**](https://mcp-serverlist.com/mcp/kavel-mcp) | @hanshs474 | [kavel-mcp](https://github.com/hanshs474/kavel-mcp) | Node.js | `npx -y hanshs474/kavel-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/kavel-mcp) |
+| [**Mayamcp**](https://mcp-serverlist.com/mcp/mayamcp) | @PatrickPalmer | [MayaMCP](https://github.com/PatrickPalmer/MayaMCP) | Python | `uvx MayaMCP` | [⚡ Config](https://mcp-serverlist.com/mcp/mayamcp) |
+| [**Flstudio MCP**](https://mcp-serverlist.com/mcp/flstudio-mcp) | @rosasynthesiz | [flstudio-mcp](https://github.com/rosasynthesiz/flstudio-mcp) | Python | `uvx flstudio-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/flstudio-mcp) |
+| [**Tdmcp**](https://mcp-serverlist.com/mcp/tdmcp) | @Pantani | [tdmcp](https://github.com/Pantani/tdmcp) | Node.js | `npx -y Pantani/tdmcp` | [⚡ Config](https://mcp-serverlist.com/mcp/tdmcp) |
+| [**Text To Model MCP**](https://mcp-serverlist.com/mcp/text-to-model) | @mikan-atomoki | [text-to-model](https://github.com/mikan-atomoki/text-to-model) | Python | `uvx text-to-model` | [⚡ Config](https://mcp-serverlist.com/mcp/text-to-model) |
+| [**Den Archi Mcp**](https://mcp-serverlist.com/mcp/den-archi-mcp) | @odd-Innocent | [den_archi_mcp](https://github.com/odd-Innocent/den_archi_mcp) | Python | `uvx den_archi_mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/den-archi-mcp) |
+| [**Autodesk Inventor MCP**](https://mcp-serverlist.com/mcp/autodesk-inventor-mcp) | @effectustasi | [autodesk-inventor-mcp](https://github.com/effectustasi/autodesk-inventor-mcp) | Python | `uvx autodesk-inventor-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/autodesk-inventor-mcp) |
+| [**Bazi Reader MCP**](https://mcp-serverlist.com/mcp/bazi-reader-mcp) | @shunshi-ai | [bazi-reader-mcp](https://github.com/shunshi-ai/bazi-reader-mcp) | Node.js | `npx -y shunshi-ai/bazi-reader-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/bazi-reader-mcp) |
+| [**Revit Model MCP**](https://mcp-serverlist.com/mcp/revit-model-mcp) | @sharafutdinovdi | [revit-model-mcp](https://github.com/sharafutdinovdi/revit-model-mcp) | Python | `uvx revit-model-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/revit-model-mcp) |
+| [**Chinese Almanac MCP**](https://mcp-serverlist.com/mcp/chinese-almanac-mcp) | @yonlandwu | [chinese-almanac-mcp](https://github.com/yonlandwu/chinese-almanac-mcp) | Node.js | `npx -y yonlandwu/chinese-almanac-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/chinese-almanac-mcp) |
+| [**Ableton Mind MCP**](https://mcp-serverlist.com/mcp/ableton-mind) | @Pantani | [ableton-mind](https://github.com/Pantani/ableton-mind) | Node.js | `npx -y Pantani/ableton-mind` | [⚡ Config](https://mcp-serverlist.com/mcp/ableton-mind) |
+| [**Pixel Surgeon MCP**](https://mcp-serverlist.com/mcp/pixel-surgeon-mcp) | @j-east | [pixel-surgeon-mcp](https://github.com/j-east/pixel-surgeon-mcp) | Node.js | `npx -y j-east/pixel-surgeon-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/pixel-surgeon-mcp) |
 
 ---
 
-## 📦 Curated MCP Servers Matrix
+### 🗄️ Databases & Storage (93 Servers)
 
-Explore the comprehensive and updated index on **[mcp-serverlist.com/category](https://mcp-serverlist.com/category)**.
+> SQL, NoSQL, Vector stores, cache layers, and cloud data platforms.  
+> 🔗 *Browse & filter all 93 servers online: [mcp-serverlist.com/category/database](https://mcp-serverlist.com/category/database)*
 
-### 🛠️ Developer Tools & DevOps
-| Server Name | Description | Runtime | Quick Install / Run | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| **GitHub** | Search repositories, manage issues, and inspect PRs. | Node.js | `npx -y @modelcontextprotocol/server-github` | [View on Web](https://mcp-serverlist.com) |
-| **Git** | Read, commit, diff, and inspect local Git repositories. | Python | `uvx mcp-server-git` | [View on Web](https://mcp-serverlist.com) |
-| **Filesystem** | Secure local file operations with path allowlisting. | Node.js | `npx -y @modelcontextprotocol/server-filesystem` | [View on Web](https://mcp-serverlist.com) |
-| **Docker** | Manage containers, images, and compose stacks. | Python | `uvx mcp-server-docker` | [View on Web](https://mcp-serverlist.com) |
-| **Kubernetes** | Inspect pods, deployments, and cluster logs. | Go / Python | `uvx mcp-server-kubernetes` | [View on Web](https://mcp-serverlist.com) |
-| **Sentry** | Retrieve issue details and error stack traces. | Python | `uvx mcp-server-sentry` | [View on Web](https://mcp-serverlist.com) |
-
-👉 *[Browse all 40+ Developer Tools on MCP ServerList](https://mcp-serverlist.com/category/devtools)*
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**Graphify MCP**](https://mcp-serverlist.com/mcp/graphify) | @Graphify-Labs | [graphify](https://github.com/Graphify-Labs/graphify) | Python | `uvx mcp-server-graphify` | [⚡ Config](https://mcp-serverlist.com/mcp/graphify) |
+| [**Private Gpt MCP**](https://mcp-serverlist.com/mcp/private-gpt) | @zylon-ai | [private-gpt](https://github.com/zylon-ai/private-gpt) | Python | `uvx mcp-server-private-gpt` | [⚡ Config](https://mcp-serverlist.com/mcp/private-gpt) |
+| [**Codebase Memory MCP**](https://mcp-serverlist.com/mcp/codebase-memory-mcp) | @DeusData | [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | Node.js | `npx -y @modelcontextprotocol/server-codebase-memory-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/codebase-memory-mcp) |
+| [**PostgreSQL Official MCP**](https://mcp-serverlist.com/mcp/postgres) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Node.js | `npx -y @modelcontextprotocol/server-postgres postgresql://user:password@localhost:5432/dbname` | [⚡ Config](https://mcp-serverlist.com/mcp/postgres) |
+| [**SQLite Database MCP**](https://mcp-serverlist.com/mcp/sqlite) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite) | Python | `uvx mcp-server-sqlite --db-path /path/to/database.db` | [⚡ Config](https://mcp-serverlist.com/mcp/sqlite) |
+| [**MongoDB NoSQL Database MCP**](https://mcp-serverlist.com/mcp/mongodb) | @khalidx | [mcp-server-mongodb](https://github.com/khalidx/mcp-server-mongodb) | Node.js | `npx -y mcp-server-mongodb` | [⚡ Config](https://mcp-serverlist.com/mcp/mongodb) |
+| [**Supabase Backend MCP**](https://mcp-serverlist.com/mcp/supabase) | @supabase | [mcp-server-supabase](https://github.com/supabase/mcp-server-supabase) | Node.js | `npx -y @supabase/mcp-server-supabase` | [⚡ Config](https://mcp-serverlist.com/mcp/supabase) |
+| [**MySQL Database MCP**](https://mcp-serverlist.com/mcp/mysql) | @designcomputer | [mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) | Python | `uvx mysql-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mysql) |
+| [**Elasticsearch & OpenSearch MCP**](https://mcp-serverlist.com/mcp/elasticsearch) | @elastic | [mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) | Node.js | `npx -y @elastic/mcp-server-elasticsearch` | [⚡ Config](https://mcp-serverlist.com/mcp/elasticsearch) |
+| [**Neon Serverless Postgres MCP**](https://mcp-serverlist.com/mcp/neon-database) | @neondatabase | [mcp-server-neon](https://github.com/neondatabase/mcp-server-neon) | Node.js | `npx -y @neondatabase/mcp-server-neon` | [⚡ Config](https://mcp-serverlist.com/mcp/neon-database) |
+| [**ClickHouse Analytical DB MCP**](https://mcp-serverlist.com/mcp/clickhouse) | @ClickHouse | [mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse) | Python | `uvx mcp-clickhouse` | [⚡ Config](https://mcp-serverlist.com/mcp/clickhouse) |
+| [**Google Cloud BigQuery MCP**](https://mcp-serverlist.com/mcp/bigquery) | @GoogleCloudPlatform | [mcp-server-bigquery](https://github.com/GoogleCloudPlatform/mcp-server-bigquery) | Python | `uvx mcp-server-bigquery` | [⚡ Config](https://mcp-serverlist.com/mcp/bigquery) |
+| [**Snowflake Enterprise Data Cloud MCP**](https://mcp-serverlist.com/mcp/snowflake) | @snowflakedb | [mcp-server-snowflake](https://github.com/snowflakedb/mcp-server-snowflake) | Python | `uvx mcp-server-snowflake` | [⚡ Config](https://mcp-serverlist.com/mcp/snowflake) |
+| [**Turso & libSQL Edge Database MCP**](https://mcp-serverlist.com/mcp/turso) | @tursodatabase | [mcp-server-turso](https://github.com/tursodatabase/mcp-server-turso) | Node.js | `npx -y @tursodatabase/mcp-server-turso` | [⚡ Config](https://mcp-serverlist.com/mcp/turso) |
+| [**Redis Cache & Key-Value MCP**](https://mcp-serverlist.com/mcp/redis) | @redis | [mcp-server-redis](https://github.com/redis/mcp-server-redis) | Node.js | `npx -y @redis/mcp-server-redis redis://localhost:6379` | [⚡ Config](https://mcp-serverlist.com/mcp/redis) |
+| [**Amazon DynamoDB NoSQL MCP**](https://mcp-serverlist.com/mcp/dynamodb) | @mcp-extensions | [mcp-server-dynamodb](https://github.com/mcp-extensions/mcp-server-dynamodb) | Python | `uvx mcp-server-dynamodb` | [⚡ Config](https://mcp-serverlist.com/mcp/dynamodb) |
+| [**PlanetScale Serverless MySQL MCP**](https://mcp-serverlist.com/mcp/planetscale) | @planetscale | [mcp-server-planetscale](https://github.com/planetscale/mcp-server-planetscale) | Node.js | `npx -y @planetscale/mcp-server-planetscale` | [⚡ Config](https://mcp-serverlist.com/mcp/planetscale) |
+| [**Whatsapp Mcp Stream**](https://mcp-serverlist.com/mcp/whatsapp-mcp-stream) | @loglux | [whatsapp-mcp-stream](https://github.com/loglux/whatsapp-mcp-stream) | Node.js | `npx -y loglux/whatsapp-mcp-stream` | [⚡ Config](https://mcp-serverlist.com/mcp/whatsapp-mcp-stream) |
+| [**Apache CouchDB Document MCP**](https://mcp-serverlist.com/mcp/couchdb) | @apache | [couchdb-mcp](https://github.com/apache/couchdb-mcp) | Node.js | `npx -y couchdb-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/couchdb) |
+| [**Dchub Mcp**](https://mcp-serverlist.com/mcp/dchub-mcp-server) | @azmartone67 | [dchub-mcp-server](https://github.com/azmartone67/dchub-mcp-server) | Node.js | `npx -y azmartone67/dchub-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/dchub-mcp-server) |
+| [**Percona Pg MCP**](https://mcp-serverlist.com/mcp/mcp-percona-pg) | @dockndevai | [mcp-percona-pg](https://github.com/dockndevai/mcp-percona-pg) | Node.js | `npx -y dockndevai/mcp-percona-pg` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-percona-pg) |
+| [**Lizard MCP**](https://mcp-serverlist.com/mcp/lizard-mcp) | @lizard-build | [lizard-mcp](https://github.com/lizard-build/lizard-mcp) | Node.js | `npx -y lizard-build/lizard-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/lizard-mcp) |
+| [**Liuhe MCP**](https://mcp-serverlist.com/mcp/liuhe) | @wulun811 | [LiuHe](https://github.com/wulun811/LiuHe) | Rust | `npx -y wulun811/LiuHe` | [⚡ Config](https://mcp-serverlist.com/mcp/liuhe) |
+| [**Opengenes MCP**](https://mcp-serverlist.com/mcp/opengenes-mcp) | @longevity-genie | [opengenes-mcp](https://github.com/longevity-genie/opengenes-mcp) | Python | `uvx opengenes-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/opengenes-mcp) |
+| [**Inoyu Mcp Unomi**](https://mcp-serverlist.com/mcp/inoyu-mcp-unomi-server) | @sergehuber | [inoyu-mcp-unomi-server](https://github.com/sergehuber/inoyu-mcp-unomi-server) | Node.js | `npx -y sergehuber/inoyu-mcp-unomi-server` | [⚡ Config](https://mcp-serverlist.com/mcp/inoyu-mcp-unomi-server) |
+| [**Echarts MCP**](https://mcp-serverlist.com/mcp/mcp-echarts) | @hustcc | [mcp-echarts](https://github.com/hustcc/mcp-echarts) | Node.js | `npx -y hustcc/mcp-echarts` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-echarts) |
+| [**Injector MCP**](https://mcp-serverlist.com/mcp/mcp-injector) | @foldwork-dev | [mcp-injector](https://github.com/foldwork-dev/mcp-injector) | Node.js | `npx -y foldwork-dev/mcp-injector` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-injector) |
+| [**Postgres MCP**](https://mcp-serverlist.com/mcp/postgres-mcp) | @crystaldba | [postgres-mcp](https://github.com/crystaldba/postgres-mcp) | Python | `uvx postgres-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/postgres-mcp) |
+| [**Codex Control Plane MCP**](https://mcp-serverlist.com/mcp/codex-control-plane-mcp) | @aresyn | [codex-control-plane-mcp](https://github.com/aresyn/codex-control-plane-mcp) | Python | `uvx codex-control-plane-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/codex-control-plane-mcp) |
+| [**Coolify MCP**](https://mcp-serverlist.com/mcp/coolify-mcp) | @frndchagas | [coolify-mcp](https://github.com/frndchagas/coolify-mcp) | Node.js | `npx -y frndchagas/coolify-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/coolify-mcp) |
+| [**Postgres Aiops MCP**](https://mcp-serverlist.com/mcp/postgres-aiops) | @AIops-tools | [Postgres-AIops](https://github.com/AIops-tools/Postgres-AIops) | Python | `uvx Postgres-AIops` | [⚡ Config](https://mcp-serverlist.com/mcp/postgres-aiops) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-24) | @bouncewatch | [mcp](https://github.com/bouncewatch/mcp) | Node.js | `npx -y bouncewatch/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-24) |
+| [**Basicdeploy MCP**](https://mcp-serverlist.com/mcp/basicdeploy-mcp) | @AkaciaNL | [basicdeploy-mcp](https://github.com/AkaciaNL/basicdeploy-mcp) | Node.js | `npx -y AkaciaNL/basicdeploy-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/basicdeploy-mcp) |
+| [**Wizzy Mcp Tmdb**](https://mcp-serverlist.com/mcp/wizzy-mcp-tmdb) | @drakonkat | [wizzy-mcp-tmdb](https://github.com/drakonkat/wizzy-mcp-tmdb) | Node.js | `npx -y drakonkat/wizzy-mcp-tmdb` | [⚡ Config](https://mcp-serverlist.com/mcp/wizzy-mcp-tmdb) |
+| [**Arcadedb MCP**](https://mcp-serverlist.com/mcp/arcadedb) | @ArcadeData | [arcadedb](https://github.com/ArcadeData/arcadedb) | Java | `npx -y ArcadeData/arcadedb` | [⚡ Config](https://mcp-serverlist.com/mcp/arcadedb) |
+| [**Easypanel Mcp**](https://mcp-serverlist.com/mcp/easypanel-mcp-server) | @helbertparanhos | [easypanel-mcp-server](https://github.com/helbertparanhos/easypanel-mcp-server) | Node.js | `npx -y helbertparanhos/easypanel-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/easypanel-mcp-server) |
+| [**Medical MCP**](https://mcp-serverlist.com/mcp/medical-mcp) | @JamesANZ | [medical-mcp](https://github.com/JamesANZ/medical-mcp) | Node.js | `npx -y JamesANZ/medical-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/medical-mcp) |
+| [**Synergy Age MCP**](https://mcp-serverlist.com/mcp/synergy-age-mcp) | @longevity-genie | [synergy-age-mcp](https://github.com/longevity-genie/synergy-age-mcp) | Python | `uvx synergy-age-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/synergy-age-mcp) |
+| [**Trinity Lite MCP**](https://mcp-serverlist.com/mcp/trinity-lite) | @Yomiracle | [trinity-lite](https://github.com/Yomiracle/trinity-lite) | Python | `uvx trinity-lite` | [⚡ Config](https://mcp-serverlist.com/mcp/trinity-lite) |
+| [**Imessage Query Fastmcp Mcp**](https://mcp-serverlist.com/mcp/imessage-query-fastmcp-mcp-server) | @hannesrudolph | [imessage-query-fastmcp-mcp-server](https://github.com/hannesrudolph/imessage-query-fastmcp-mcp-server) | Python | `uvx imessage-query-fastmcp-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/imessage-query-fastmcp-mcp-server) |
+| [**Neon Mcp Gateway**](https://mcp-serverlist.com/mcp/neon-mcp-gateway) | @neoninnovationlab | [neon-mcp-gateway](https://github.com/neoninnovationlab/neon-mcp-gateway) | Node.js | `npx -y neoninnovationlab/neon-mcp-gateway` | [⚡ Config](https://mcp-serverlist.com/mcp/neon-mcp-gateway) |
+| [**Aiven MCP**](https://mcp-serverlist.com/mcp/mcp-aiven) | @Aiven-Open | [mcp-aiven](https://github.com/Aiven-Open/mcp-aiven) | Python | `uvx mcp-aiven` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-aiven) |
+| [**Cute Web Scraper MCP**](https://mcp-serverlist.com/mcp/cute-web-scraper) | @maccydee | [cute-web-scraper](https://github.com/maccydee/cute-web-scraper) | Python | `uvx cute-web-scraper` | [⚡ Config](https://mcp-serverlist.com/mcp/cute-web-scraper) |
+| [**Analytics MCP**](https://mcp-serverlist.com/mcp/mcp-analytics) | @embeddedlayers | [mcp-analytics](https://github.com/embeddedlayers/mcp-analytics) | Python | `uvx mcp-analytics` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-analytics) |
+| [**Schemabrain MCP**](https://mcp-serverlist.com/mcp/schemabrain) | @Arun-kc | [schemabrain](https://github.com/Arun-kc/schemabrain) | Python | `uvx schemabrain` | [⚡ Config](https://mcp-serverlist.com/mcp/schemabrain) |
+| [**Cockroachdb MCP**](https://mcp-serverlist.com/mcp/mcp-cockroachdb) | @amineelkouhen | [mcp-cockroachdb](https://github.com/amineelkouhen/mcp-cockroachdb) | Python | `uvx mcp-cockroachdb` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-cockroachdb) |
+| [**Dataverse MCP**](https://mcp-serverlist.com/mcp/mcp-dataverse) | @codeurali | [mcp-dataverse](https://github.com/codeurali/mcp-dataverse) | Node.js | `npx -y codeurali/mcp-dataverse` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-dataverse) |
+| [**Supabase Mcp**](https://mcp-serverlist.com/mcp/supabase-mcp-server) | @alexander-zuev | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | Node.js | `npx -y alexander-zuev/supabase-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/supabase-mcp-server) |
+| [**Excalidraw Architect MCP**](https://mcp-serverlist.com/mcp/excalidraw-architect-mcp) | @BV-Venky | [excalidraw-architect-mcp](https://github.com/BV-Venky/excalidraw-architect-mcp) | Python | `uvx excalidraw-architect-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/excalidraw-architect-mcp) |
+| [**Octodamus Core MCP**](https://mcp-serverlist.com/mcp/octodamus-core) | @Octodamus | [octodamus-core](https://github.com/Octodamus/octodamus-core) | Python | `uvx octodamus-core` | [⚡ Config](https://mcp-serverlist.com/mcp/octodamus-core) |
+| [**Rrweb Stack MCP**](https://mcp-serverlist.com/mcp/rrweb-stack) | @Cubenest | [rrweb-stack](https://github.com/Cubenest/rrweb-stack) | Node.js | `npx -y Cubenest/rrweb-stack` | [⚡ Config](https://mcp-serverlist.com/mcp/rrweb-stack) |
+| [**Shiply MCP**](https://mcp-serverlist.com/mcp/shiply-mcp) | @stevejford | [shiply-mcp](https://github.com/stevejford/shiply-mcp) | Node.js | `npx -y stevejford/shiply-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/shiply-mcp) |
+| [**Cloudprice MCP**](https://mcp-serverlist.com/mcp/cloudprice-mcp) | @Albaker-Group | [cloudprice-mcp](https://github.com/Albaker-Group/cloudprice-mcp) | Python | `uvx cloudprice-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/cloudprice-mcp) |
+| [**Trino MCP**](https://mcp-serverlist.com/mcp/mcp-server-trino) | @Dataring-engineering | [mcp-server-trino](https://github.com/Dataring-engineering/mcp-server-trino) | Python | `uvx mcp-server-trino` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-trino) |
+| [**Echoloc MCP**](https://mcp-serverlist.com/mcp/echoloc-mcp) | @echoloc-ai | [echoloc-mcp](https://github.com/echoloc-ai/echoloc-mcp) | Python | `uvx echoloc-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/echoloc-mcp) |
+| [**Ssh Manager MCP**](https://mcp-serverlist.com/mcp/mcp-ssh-manager) | @bvisible | [mcp-ssh-manager](https://github.com/bvisible/mcp-ssh-manager) | Node.js | `npx -y bvisible/mcp-ssh-manager` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-ssh-manager) |
+| [**Clickhouse MCP**](https://mcp-serverlist.com/mcp/mcp-clickhouse) | @dockndevai | [mcp-clickhouse](https://github.com/dockndevai/mcp-clickhouse) | Node.js | `npx -y dockndevai/mcp-clickhouse` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-clickhouse) |
+| [**Yanifend MCP**](https://mcp-serverlist.com/mcp/yanifend-mcp) | @skippedaga | [yanifend-mcp](https://github.com/skippedaga/yanifend-mcp) | Java | `npx -y skippedaga/yanifend-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/yanifend-mcp) |
+| [**Infrawise MCP**](https://mcp-serverlist.com/mcp/infrawise) | @Sidd27 | [infrawise](https://github.com/Sidd27/infrawise) | Node.js | `npx -y Sidd27/infrawise` | [⚡ Config](https://mcp-serverlist.com/mcp/infrawise) |
+| [**Postgres MCP**](https://mcp-serverlist.com/mcp/mcp-postgres-server) | @antonorlov | [mcp-postgres-server](https://github.com/antonorlov/mcp-postgres-server) | Node.js | `npx -y antonorlov/mcp-postgres-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-postgres-server) |
+| [**Dicom MCP**](https://mcp-serverlist.com/mcp/dicom-mcp) | @ChristianHinge | [dicom-mcp](https://github.com/ChristianHinge/dicom-mcp) | Python | `uvx dicom-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/dicom-mcp) |
+| [**Cloudbase Ai Toolkit MCP**](https://mcp-serverlist.com/mcp/cloudbase-ai-toolkit) | @TencentCloudBase | [CloudBase-AI-ToolKit](https://github.com/TencentCloudBase/CloudBase-AI-ToolKit) | Node.js | `npx -y TencentCloudBase/CloudBase-AI-ToolKit` | [⚡ Config](https://mcp-serverlist.com/mcp/cloudbase-ai-toolkit) |
+| [**Mysql MCP**](https://mcp-serverlist.com/mcp/mcp-server-mysql) | @benborla | [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) | Node.js | `npx -y benborla/mcp-server-mysql` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-mysql) |
+| [**Astronomy Oracle MCP**](https://mcp-serverlist.com/mcp/astronomy-oracle) | @gregario | [astronomy-oracle](https://github.com/gregario/astronomy-oracle) | Node.js | `npx -y gregario/astronomy-oracle` | [⚡ Config](https://mcp-serverlist.com/mcp/astronomy-oracle) |
+| [**Codegraphcontext MCP**](https://mcp-serverlist.com/mcp/codegraphcontext) | @Shashankss1205 | [CodeGraphContext](https://github.com/Shashankss1205/CodeGraphContext) | Python | `uvx CodeGraphContext` | [⚡ Config](https://mcp-serverlist.com/mcp/codegraphcontext) |
+| [**Mnemiq MCP**](https://mcp-serverlist.com/mcp/mnemiq) | @agenticfabriq | [mnemiq](https://github.com/agenticfabriq/mnemiq) | Python | `uvx mnemiq` | [⚡ Config](https://mcp-serverlist.com/mcp/mnemiq) |
+| [**Anythingmcp**](https://mcp-serverlist.com/mcp/anythingmcp) | @HelpCode-ai | [anythingmcp](https://github.com/HelpCode-ai/anythingmcp) | Node.js | `npx -y HelpCode-ai/anythingmcp` | [⚡ Config](https://mcp-serverlist.com/mcp/anythingmcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-25) | @appwrite | [mcp](https://github.com/appwrite/mcp) | Python | `uvx mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-25) |
+| [**Tidb MCP**](https://mcp-serverlist.com/mcp/mcp-server-tidb) | @c4pt0r | [mcp-server-tidb](https://github.com/c4pt0r/mcp-server-tidb) | Python | `uvx mcp-server-tidb` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-tidb) |
+| [**Couchbase MCP**](https://mcp-serverlist.com/mcp/mcp-server-couchbase) | @Couchbase-Ecosystem | [mcp-server-couchbase](https://github.com/Couchbase-Ecosystem/mcp-server-couchbase) | Python | `uvx mcp-server-couchbase` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-couchbase) |
+| [**Linux Tools MCP**](https://mcp-serverlist.com/mcp/mcp-linux-tools) | @gerard-kanters | [mcp-linux-tools](https://github.com/gerard-kanters/mcp-linux-tools) | Python | `uvx mcp-linux-tools` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-linux-tools) |
+| [**Oci Pricing MCP**](https://mcp-serverlist.com/mcp/oci-pricing-mcp) | @jasonwilbur | [oci-pricing-mcp](https://github.com/jasonwilbur/oci-pricing-mcp) | Node.js | `npx -y jasonwilbur/oci-pricing-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/oci-pricing-mcp) |
+| [**Datacharter MCP**](https://mcp-serverlist.com/mcp/datacharter) | @datacharter | [datacharter](https://github.com/datacharter/datacharter) | Python | `uvx datacharter` | [⚡ Config](https://mcp-serverlist.com/mcp/datacharter) |
+| [**Coremcp**](https://mcp-serverlist.com/mcp/coremcp) | @corebasehq | [coremcp](https://github.com/corebasehq/coremcp) | Node.js | `npx -y corebasehq/coremcp` | [⚡ Config](https://mcp-serverlist.com/mcp/coremcp) |
+| [**Hatchable MCP**](https://mcp-serverlist.com/mcp/hatchable-mcp) | @Woobox | [hatchable-mcp](https://github.com/Woobox/hatchable-mcp) | Node.js | `npx -y Woobox/hatchable-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/hatchable-mcp) |
+| [**Mcpg**](https://mcp-serverlist.com/mcp/mcpg) | @devopam | [MCPg](https://github.com/devopam/MCPg) | Python | `uvx MCPg` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpg) |
+| [**Local Ydb Toolkit MCP**](https://mcp-serverlist.com/mcp/local-ydb-toolkit) | @astandrik | [local-ydb-toolkit](https://github.com/astandrik/local-ydb-toolkit) | Node.js | `npx -y astandrik/local-ydb-toolkit` | [⚡ Config](https://mcp-serverlist.com/mcp/local-ydb-toolkit) |
+| [**Sql Query MCP**](https://mcp-serverlist.com/mcp/sql-query-mcp) | @andyWang1688 | [sql-query-mcp](https://github.com/andyWang1688/sql-query-mcp) | Python | `uvx sql-query-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/sql-query-mcp) |
+| [**Baserow MCP**](https://mcp-serverlist.com/mcp/baserow) | @bram2w | [baserow](https://github.com/bram2w/baserow) | Node.js | `npx -y bram2w/baserow` | [⚡ Config](https://mcp-serverlist.com/mcp/baserow) |
+| [**Openaaas MCP**](https://mcp-serverlist.com/mcp/openaaas) | @Wolido | [OpenAaaS](https://github.com/Wolido/OpenAaaS) | Python | `uvx OpenAaaS` | [⚡ Config](https://mcp-serverlist.com/mcp/openaaas) |
+| [**Gateway MCP**](https://mcp-serverlist.com/mcp/gateway) | @centralmind | [gateway](https://github.com/centralmind/gateway) | Node.js | `npx -y centralmind/gateway` | [⚡ Config](https://mcp-serverlist.com/mcp/gateway) |
+| [**Mysql Mcp**](https://mcp-serverlist.com/mcp/mysql-mcp-server) | @dave-wind | [mysql-mcp-server](https://github.com/dave-wind/mysql-mcp-server) | Node.js | `npx -y dave-wind/mysql-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mysql-mcp-server) |
+| [**Anyquery MCP**](https://mcp-serverlist.com/mcp/anyquery) | @julien040 | [anyquery](https://github.com/julien040/anyquery) | Node.js | `npx -y julien040/anyquery` | [⚡ Config](https://mcp-serverlist.com/mcp/anyquery) |
+| [**Sqlserver MCP**](https://mcp-serverlist.com/mcp/mcp-sqlserver) | @cvelasquez | [mcp-sqlserver](https://github.com/cvelasquez/mcp-sqlserver) | Node.js | `npx -y cvelasquez/mcp-sqlserver` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-sqlserver) |
+| [**Iaptic MCP**](https://mcp-serverlist.com/mcp/mcp-server-iaptic) | @iaptic | [mcp-server-iaptic](https://github.com/iaptic/mcp-server-iaptic) | Node.js | `npx -y iaptic/mcp-server-iaptic` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-iaptic) |
+| [**Confluent MCP**](https://mcp-serverlist.com/mcp/mcp-confluent) | @confluentinc | [mcp-confluent](https://github.com/confluentinc/mcp-confluent) | Python | `uvx mcp-confluent` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-confluent) |
+| [**Alphafold Sovereign MCP**](https://mcp-serverlist.com/mcp/alphafold-sovereign-mcp) | @smaniches | [alphafold-sovereign-mcp](https://github.com/smaniches/alphafold-sovereign-mcp) | Python | `uvx alphafold-sovereign-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/alphafold-sovereign-mcp) |
+| [**Chart MCP**](https://mcp-serverlist.com/mcp/mcp-server-chart) | @antvis | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | Node.js | `npx -y antvis/mcp-server-chart` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-chart) |
+| [**Gtm Signals Aggregator MCP**](https://mcp-serverlist.com/mcp/mcp-gtm-signals-aggregator) | @mambalabsdev | [mcp-gtm-signals-aggregator](https://github.com/mambalabsdev/mcp-gtm-signals-aggregator) | Node.js | `npx -y mambalabsdev/mcp-gtm-signals-aggregator` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-gtm-signals-aggregator) |
+| [**Mermaid MCP**](https://mcp-serverlist.com/mcp/mcp-mermaid) | @hustcc | [mcp-mermaid](https://github.com/hustcc/mcp-mermaid) | Node.js | `npx -y hustcc/mcp-mermaid` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-mermaid) |
+| [**Plant Genomics MCP**](https://mcp-serverlist.com/mcp/plant-genomics-mcp) | @musharna | [plant-genomics-mcp](https://github.com/musharna/plant-genomics-mcp) | Python | `uvx plant-genomics-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/plant-genomics-mcp) |
+| [**Oci MCP**](https://mcp-serverlist.com/mcp/mcp-oci) | @dockndevai | [mcp-oci](https://github.com/dockndevai/mcp-oci) | Node.js | `npx -y dockndevai/mcp-oci` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-oci) |
+| [**Redis Cloud MCP**](https://mcp-serverlist.com/mcp/mcp-redis-cloud) | @redis | [mcp-redis-cloud](https://github.com/redis/mcp-redis-cloud) | Node.js | `npx -y redis/mcp-redis-cloud` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-redis-cloud) |
 
 ---
 
-### 🗄️ Databases & Storage
-| Server Name | Description | Runtime | Quick Install / Run | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| **PostgreSQL** | Read-only inspection and querying of Postgres databases. | Node.js | `npx -y @modelcontextprotocol/server-postgres` | [View on Web](https://mcp-serverlist.com) |
-| **SQLite** | Query and analyze local SQLite databases with schema inspection. | Python | `uvx mcp-server-sqlite` | [View on Web](https://mcp-serverlist.com) |
-| **MySQL** | Inspect and query MySQL / MariaDB databases securely. | Node.js | `npx -y @modelcontextprotocol/server-mysql` | [View on Web](https://mcp-serverlist.com) |
-| **Redis** | Key-value store inspection and command execution. | Node.js | `npx -y @modelcontextprotocol/server-redis` | [View on Web](https://mcp-serverlist.com) |
-| **Supabase** | Query tables and manage Edge Functions on Supabase. | Node.js | `npx -y @supabase/mcp-server` | [View on Web](https://mcp-serverlist.com) |
-| **MongoDB** | Schema exploration and aggregation queries on Mongo collections. | Node.js | `npx -y @mongodb/mcp-server` | [View on Web](https://mcp-serverlist.com) |
+### 🌐 Web Browsing & Search / Scraping (103 Servers)
 
-👉 *[Browse all 30+ Database Servers on MCP ServerList](https://mcp-serverlist.com/category/database)*
+> Browser automation, headless scraping, search engines, and live web extraction.  
+> 🔗 *Browse & filter all 103 servers online: [mcp-serverlist.com/category/web-browsing](https://mcp-serverlist.com/category/web-browsing)*
+
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**Ecc MCP**](https://mcp-serverlist.com/mcp/ecc) | @affaan-m | [ECC](https://github.com/affaan-m/ECC) | Node.js | `npx -y @modelcontextprotocol/server-ecc` | [⚡ Config](https://mcp-serverlist.com/mcp/ecc) |
+| [**Agent Reach MCP**](https://mcp-serverlist.com/mcp/agent-reach) | @Panniantong | [Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Python | `uvx mcp-server-agent-reach` | [⚡ Config](https://mcp-serverlist.com/mcp/agent-reach) |
+| [**Scrapling MCP**](https://mcp-serverlist.com/mcp/scrapling) | @D4Vinci | [Scrapling](https://github.com/D4Vinci/Scrapling) | Python | `uvx mcp-server-scrapling` | [⚡ Config](https://mcp-serverlist.com/mcp/scrapling) |
+| [**Hyperframes MCP**](https://mcp-serverlist.com/mcp/hyperframes) | @heygen-com | [hyperframes](https://github.com/heygen-com/hyperframes) | Node.js | `npx -y @modelcontextprotocol/server-hyperframes` | [⚡ Config](https://mcp-serverlist.com/mcp/hyperframes) |
+| [**Librechat MCP**](https://mcp-serverlist.com/mcp/librechat) | @LibreChat-AI | [LibreChat](https://github.com/LibreChat-AI/LibreChat) | Node.js | `npx -y @modelcontextprotocol/server-librechat` | [⚡ Config](https://mcp-serverlist.com/mcp/librechat) |
+| [**Ui Tars Desktop MCP**](https://mcp-serverlist.com/mcp/ui-tars-desktop) | @bytedance | [UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) | Node.js | `npx -y @modelcontextprotocol/server-ui-tars-desktop` | [⚡ Config](https://mcp-serverlist.com/mcp/ui-tars-desktop) |
+| [**Playwright MCP**](https://mcp-serverlist.com/mcp/playwright-mcp) | @microsoft | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | Node.js | `npx -y @modelcontextprotocol/server-playwright-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/playwright-mcp) |
+| [**Invisible Dots MCP**](https://mcp-serverlist.com/mcp/invisible-dots) | @feder-cr | [invisible_dots](https://github.com/feder-cr/invisible_dots) | Node.js | `npx -y @modelcontextprotocol/server-invisible-dots` | [⚡ Config](https://mcp-serverlist.com/mcp/invisible-dots) |
+| [**Composio MCP**](https://mcp-serverlist.com/mcp/composio) | @ComposioHQ | [composio](https://github.com/ComposioHQ/composio) | Node.js | `npx -y @modelcontextprotocol/server-composio` | [⚡ Config](https://mcp-serverlist.com/mcp/composio) |
+| [**Gpt Researcher MCP**](https://mcp-serverlist.com/mcp/gpt-researcher) | @assafelovic | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | Python | `uvx mcp-server-gpt-researcher` | [⚡ Config](https://mcp-serverlist.com/mcp/gpt-researcher) |
+| [**Page Agent MCP**](https://mcp-serverlist.com/mcp/page-agent) | @alibaba | [page-agent](https://github.com/alibaba/page-agent) | Node.js | `npx -y @modelcontextprotocol/server-page-agent` | [⚡ Config](https://mcp-serverlist.com/mcp/page-agent) |
+| [**Haystack MCP**](https://mcp-serverlist.com/mcp/haystack) | @deepset-ai | [haystack](https://github.com/deepset-ai/haystack) | Python | `uvx mcp-server-haystack` | [⚡ Config](https://mcp-serverlist.com/mcp/haystack) |
+| [**Open Seo MCP**](https://mcp-serverlist.com/mcp/open-seo) | @every-app | [open-seo](https://github.com/every-app/open-seo) | Node.js | `npx -y @modelcontextprotocol/server-open-seo` | [⚡ Config](https://mcp-serverlist.com/mcp/open-seo) |
+| [**Brave Search Engine MCP**](https://mcp-serverlist.com/mcp/brave-search) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | Node.js | `npx -y @modelcontextprotocol/server-brave-search` | [⚡ Config](https://mcp-serverlist.com/mcp/brave-search) |
+| [**Official Fetch MCP Server**](https://mcp-serverlist.com/mcp/fetch) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Python | `uvx mcp-server-fetch` | [⚡ Config](https://mcp-serverlist.com/mcp/fetch) |
+| [**Puppeteer Browser Automation MCP**](https://mcp-serverlist.com/mcp/puppeteer) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Node.js | `npx -y @modelcontextprotocol/server-puppeteer` | [⚡ Config](https://mcp-serverlist.com/mcp/puppeteer) |
+| [**Crawl4AI Async Web Crawler MCP**](https://mcp-serverlist.com/mcp/crawl4ai) | @unclecode | [crawl4ai](https://github.com/unclecode/crawl4ai) | Python | `uvx crawl4ai-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/crawl4ai) |
+| [**Playwright Browser Automation MCP**](https://mcp-serverlist.com/mcp/playwright) | @executeautomation | [mcp-playwright](https://github.com/executeautomation/mcp-playwright) | Node.js | `npx -y mcp-playwright` | [⚡ Config](https://mcp-serverlist.com/mcp/playwright) |
+| [**Perplexity Sonar Search MCP**](https://mcp-serverlist.com/mcp/perplexity) | @perplexityai | [mcp-server-perplexity](https://github.com/perplexityai/mcp-server-perplexity) | Node.js | `npx -y mcp-server-perplexity` | [⚡ Config](https://mcp-serverlist.com/mcp/perplexity) |
+| [**Firecrawl Deep Scraping MCP**](https://mcp-serverlist.com/mcp/firecrawl) | @mendableai | [firecrawl-mcp-server](https://github.com/mendableai/firecrawl-mcp-server) | Node.js | `npx -y firecrawl-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/firecrawl) |
+| [**Spider Fast Web Scraper MCP**](https://mcp-serverlist.com/mcp/spider-cloud) | @spider-rs | [spider-mcp](https://github.com/spider-rs/spider-mcp) | Node.js | `npx -y spider-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/spider-cloud) |
+| [**Exa AI Neural Web Search MCP**](https://mcp-serverlist.com/mcp/exa-search) | @exa-labs | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) | Node.js | `npx -y exa-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/exa-search) |
+| [**Google Custom Search API MCP**](https://mcp-serverlist.com/mcp/google-search) | @mcp-community | [mcp-server-google-search](https://github.com/mcp-community/mcp-server-google-search) | Python | `uvx mcp-server-google-search` | [⚡ Config](https://mcp-serverlist.com/mcp/google-search) |
+| [**Browserbase Headless Cloud Browser MCP**](https://mcp-serverlist.com/mcp/browserbase) | @browserbase | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | Node.js | `npx -y @browserbasehq/mcp-server-browserbase` | [⚡ Config](https://mcp-serverlist.com/mcp/browserbase) |
+| [**Tavily AI Search MCP**](https://mcp-serverlist.com/mcp/tavily) | @tavily-ai | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | Python | `uvx tavily-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/tavily) |
+| [**YouTube Subtitle & Transcript MCP**](https://mcp-serverlist.com/mcp/youtube-transcript) | @kimtaeyi | [mcp-server-youtube-transcript](https://github.com/kimtaeyi/mcp-server-youtube-transcript) | Node.js | `npx -y mcp-server-youtube-transcript` | [⚡ Config](https://mcp-serverlist.com/mcp/youtube-transcript) |
+| [**Bright Data Web Scraping MCP**](https://mcp-serverlist.com/mcp/brightdata) | @bright-data | [brightdata-mcp](https://github.com/bright-data/brightdata-mcp) | Node.js | `npx -y @brightdata/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/brightdata) |
+| [**DuckDuckGo Privacy Search MCP**](https://mcp-serverlist.com/mcp/duckduckgo) | @automata | [mcp-server-duckduckgo](https://github.com/automata/mcp-server-duckduckgo) | Python | `uvx mcp-server-duckduckgo` | [⚡ Config](https://mcp-serverlist.com/mcp/duckduckgo) |
+| [**X402search MCP**](https://mcp-serverlist.com/mcp/x402search-mcp) | @x402-index | [x402search-mcp](https://github.com/x402-index/x402search-mcp) | Node.js | `npx -y x402-index/x402search-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/x402search-mcp) |
+| [**Memeboat MCP**](https://mcp-serverlist.com/mcp/memeboat-mcp) | @memebo-at | [memeboat-mcp](https://github.com/memebo-at/memeboat-mcp) | Node.js | `npx -y memebo-at/memeboat-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/memeboat-mcp) |
+| [**Spotify MCP**](https://mcp-serverlist.com/mcp/spotify-mcp) | @gupta-kush | [spotify-mcp](https://github.com/gupta-kush/spotify-mcp) | Python | `uvx spotify-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/spotify-mcp) |
+| [**Sansfiction MCP**](https://mcp-serverlist.com/mcp/sansfiction-mcp) | @fgbytes | [sansfiction-mcp](https://github.com/fgbytes/sansfiction-mcp) | Node.js | `npx -y fgbytes/sansfiction-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/sansfiction-mcp) |
+| [**Alexandria MCP**](https://mcp-serverlist.com/mcp/alexandria-mcp) | @AIDataNordic | [alexandria-mcp](https://github.com/AIDataNordic/alexandria-mcp) | Python | `uvx alexandria-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/alexandria-mcp) |
+| [**Sonovault MCP**](https://mcp-serverlist.com/mcp/sonovault-mcp) | @rekordcloud | [sonovault-mcp](https://github.com/rekordcloud/sonovault-mcp) | Node.js | `npx -y rekordcloud/sonovault-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/sonovault-mcp) |
+| [**X402 List MCP**](https://mcp-serverlist.com/mcp/x402-list-mcp) | @mcccsm | [x402-list-mcp](https://github.com/mcccsm/x402-list-mcp) | Node.js | `npx -y mcccsm/x402-list-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/x402-list-mcp) |
+| [**Evc Spark MCP**](https://mcp-serverlist.com/mcp/evc-spark-mcp) | @entire-vc | [evc-spark-mcp](https://github.com/entire-vc/evc-spark-mcp) | Node.js | `npx -y entire-vc/evc-spark-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/evc-spark-mcp) |
+| [**Utility Grid MCP**](https://mcp-serverlist.com/mcp/utility-grid-mcp) | @forgemeshlabs | [utility-grid-mcp](https://github.com/forgemeshlabs/utility-grid-mcp) | Node.js | `npx -y forgemeshlabs/utility-grid-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/utility-grid-mcp) |
+| [**Opentabs MCP**](https://mcp-serverlist.com/mcp/opentabs) | @opentabs-dev | [opentabs](https://github.com/opentabs-dev/opentabs) | Node.js | `npx -y opentabs-dev/opentabs` | [⚡ Config](https://mcp-serverlist.com/mcp/opentabs) |
+| [**Encode Toolkit MCP**](https://mcp-serverlist.com/mcp/encode-toolkit) | @ammawla | [encode-toolkit](https://github.com/ammawla/encode-toolkit) | Node.js | `npx -y ammawla/encode-toolkit` | [⚡ Config](https://mcp-serverlist.com/mcp/encode-toolkit) |
+| [**Video Editing MCP**](https://mcp-serverlist.com/mcp/video-editing-mcp) | @burningion | [video-editing-mcp](https://github.com/burningion/video-editing-mcp) | Python | `uvx video-editing-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/video-editing-mcp) |
+| [**Sylex Search MCP**](https://mcp-serverlist.com/mcp/sylex-search) | @MastadoonPrime | [sylex-search](https://github.com/MastadoonPrime/sylex-search) | Python | `uvx sylex-search` | [⚡ Config](https://mcp-serverlist.com/mcp/sylex-search) |
+| [**Gradusnotation MCP**](https://mcp-serverlist.com/mcp/gradusnotation) | @delmas41 | [gradusnotation](https://github.com/delmas41/gradusnotation) | Node.js | `npx -y delmas41/gradusnotation` | [⚡ Config](https://mcp-serverlist.com/mcp/gradusnotation) |
+| [**Orchestrator MCP**](https://mcp-serverlist.com/mcp/mcp-orchestrator) | @rupinder2 | [mcp-orchestrator](https://github.com/rupinder2/mcp-orchestrator) | Python | `uvx mcp-orchestrator` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-orchestrator) |
+| [**Agentbodega MCP**](https://mcp-serverlist.com/mcp/agentbodega) | @agentbodegastore | [agentbodega](https://github.com/agentbodegastore/agentbodega) | Node.js | `npx -y agentbodegastore/agentbodega` | [⚡ Config](https://mcp-serverlist.com/mcp/agentbodega) |
+| [**Nimbus MCP**](https://mcp-serverlist.com/mcp/nimbus) | @nimbus-agent | [Nimbus](https://github.com/nimbus-agent/Nimbus) | Node.js | `npx -y nimbus-agent/Nimbus` | [⚡ Config](https://mcp-serverlist.com/mcp/nimbus) |
+| [**Opdstar Nhi MCP**](https://mcp-serverlist.com/mcp/opdstar-nhi-mcp) | @tatsuju | [opdstar-nhi-mcp](https://github.com/tatsuju/opdstar-nhi-mcp) | Node.js | `npx -y tatsuju/opdstar-nhi-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/opdstar-nhi-mcp) |
+| [**Vineverse MCP**](https://mcp-serverlist.com/mcp/vineverse-mcp) | @DataCraftsmanAU | [vineverse-mcp](https://github.com/DataCraftsmanAU/vineverse-mcp) | Node.js | `npx -y DataCraftsmanAU/vineverse-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/vineverse-mcp) |
+| [**Dicomweb Mcp**](https://mcp-serverlist.com/mcp/dicomweb-mcp-server) | @PantelisGeorgiadis | [dicomweb-mcp-server](https://github.com/PantelisGeorgiadis/dicomweb-mcp-server) | Node.js | `npx -y PantelisGeorgiadis/dicomweb-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/dicomweb-mcp-server) |
+| [**Agenium MCP**](https://mcp-serverlist.com/mcp/agenium) | @Aganium | [agenium](https://github.com/Aganium/agenium) | Node.js | `npx -y Aganium/agenium` | [⚡ Config](https://mcp-serverlist.com/mcp/agenium) |
+| [**Metmuseum MCP**](https://mcp-serverlist.com/mcp/metmuseum-mcp) | @mikechao | [metmuseum-mcp](https://github.com/mikechao/metmuseum-mcp) | Node.js | `npx -y mikechao/metmuseum-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/metmuseum-mcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-2) | @withoneai | [mcp](https://github.com/withoneai/mcp) | Node.js | `npx -y withoneai/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-2) |
+| [**Agentdeals MCP**](https://mcp-serverlist.com/mcp/agentdeals) | @robhunter | [agentdeals](https://github.com/robhunter/agentdeals) | Node.js | `npx -y robhunter/agentdeals` | [⚡ Config](https://mcp-serverlist.com/mcp/agentdeals) |
+| [**Ucsc Genome MCP**](https://mcp-serverlist.com/mcp/ucsc-genome-mcp) | @hlydecker | [ucsc-genome-mcp](https://github.com/hlydecker/ucsc-genome-mcp) | Python | `uvx ucsc-genome-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ucsc-genome-mcp) |
+| [**Macaroonnetwork MCP**](https://mcp-serverlist.com/mcp/macaroonnetwork-mcp) | @kevmoz | [macaroonnetwork-mcp](https://github.com/kevmoz/macaroonnetwork-mcp) | Python | `uvx macaroonnetwork-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/macaroonnetwork-mcp) |
+| [**A2asearch MCP**](https://mcp-serverlist.com/mcp/a2asearch-mcp) | @tadas-github | [a2asearch-mcp](https://github.com/tadas-github/a2asearch-mcp) | Node.js | `npx -y tadas-github/a2asearch-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/a2asearch-mcp) |
+| [**Bideetmusique MCP**](https://mcp-serverlist.com/mcp/mcp-bideetmusique) | @smeet666 | [mcp-bideetmusique](https://github.com/smeet666/mcp-bideetmusique) | Node.js | `npx -y smeet666/mcp-bideetmusique` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-bideetmusique) |
+| [**Evipedia MCP**](https://mcp-serverlist.com/mcp/evipedia-mcp) | @forever-healthy | [evipedia-mcp](https://github.com/forever-healthy/evipedia-mcp) | Node.js | `npx -y forever-healthy/evipedia-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/evipedia-mcp) |
+| [**Rijksmuseum MCP**](https://mcp-serverlist.com/mcp/rijksmuseum-mcp) | @r-huijts | [rijksmuseum-mcp](https://github.com/r-huijts/rijksmuseum-mcp) | Node.js | `npx -y r-huijts/rijksmuseum-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/rijksmuseum-mcp) |
+| [**Open Museum MCP**](https://mcp-serverlist.com/mcp/open-museum-mcp) | @cfpramod | [open-museum-mcp](https://github.com/cfpramod/open-museum-mcp) | Node.js | `npx -y cfpramod/open-museum-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/open-museum-mcp) |
+| [**Claude Skills MCP**](https://mcp-serverlist.com/mcp/claude-skills-mcp) | @K-Dense-AI | [claude-skills-mcp](https://github.com/K-Dense-AI/claude-skills-mcp) | Python | `uvx claude-skills-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/claude-skills-mcp) |
+| [**Myinstants MCP**](https://mcp-serverlist.com/mcp/myinstants-mcp) | @austenstone | [myinstants-mcp](https://github.com/austenstone/myinstants-mcp) | Node.js | `npx -y austenstone/myinstants-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/myinstants-mcp) |
+| [**Identityforge MCP**](https://mcp-serverlist.com/mcp/identityforge-mcp) | @KasayoDotCom | [identityforge-mcp](https://github.com/KasayoDotCom/identityforge-mcp) | Node.js | `npx -y KasayoDotCom/identityforge-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/identityforge-mcp) |
+| [**Heor Agent MCP**](https://mcp-serverlist.com/mcp/heor-agent-mcp) | @neptun2000 | [heor-agent-mcp](https://github.com/neptun2000/heor-agent-mcp) | Node.js | `npx -y neptun2000/heor-agent-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/heor-agent-mcp) |
+| [**Pubmed Search MCP**](https://mcp-serverlist.com/mcp/pubmed-search) | @pubspro | [pubmed-search](https://github.com/pubspro/pubmed-search) | Node.js | `npx -y pubspro/pubmed-search` | [⚡ Config](https://mcp-serverlist.com/mcp/pubmed-search) |
+| [**Calibreweb MCP**](https://mcp-serverlist.com/mcp/calibreweb-mcp) | @ni-c | [calibreweb-mcp](https://github.com/ni-c/calibreweb-mcp) | Node.js | `npx -y ni-c/calibreweb-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/calibreweb-mcp) |
+| [**Apple Music MCP**](https://mcp-serverlist.com/mcp/mcp-apple-music) | @Cifero74 | [mcp-apple-music](https://github.com/Cifero74/mcp-apple-music) | Python | `uvx mcp-apple-music` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-apple-music) |
+| [**Lrclib MCP**](https://mcp-serverlist.com/mcp/mcp-lrclib) | @smeet666 | [mcp-lrclib](https://github.com/smeet666/mcp-lrclib) | Node.js | `npx -y smeet666/mcp-lrclib` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-lrclib) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp) | @getanyapi-com | [mcp](https://github.com/getanyapi-com/mcp) | Node.js | `npx -y getanyapi-com/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp) |
+| [**Bilibili Mcp Js**](https://mcp-serverlist.com/mcp/bilibili-mcp-js) | @34892002 | [bilibili-mcp-js](https://github.com/34892002/bilibili-mcp-js) | Node.js | `npx -y 34892002/bilibili-mcp-js` | [⚡ Config](https://mcp-serverlist.com/mcp/bilibili-mcp-js) |
+| [**Practice Fusion MCP**](https://mcp-serverlist.com/mcp/practice-fusion-mcp) | @kushaim | [practice-fusion-mcp](https://github.com/kushaim/practice-fusion-mcp) | Node.js | `npx -y kushaim/practice-fusion-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/practice-fusion-mcp) |
+| [**Orbit Sentinel MCP**](https://mcp-serverlist.com/mcp/orbit-sentinel-mcp) | @viventine-space | [orbit-sentinel-mcp](https://github.com/viventine-space/orbit-sentinel-mcp) | Node.js | `npx -y viventine-space/orbit-sentinel-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/orbit-sentinel-mcp) |
+| [**Agent402 MCP**](https://mcp-serverlist.com/mcp/agent402) | @MikeyPetrillo | [Agent402](https://github.com/MikeyPetrillo/Agent402) | Node.js | `npx -y MikeyPetrillo/Agent402` | [⚡ Config](https://mcp-serverlist.com/mcp/agent402) |
+| [**Mockit MCP**](https://mcp-serverlist.com/mcp/mockit-mcp) | @karyaboyraz | [mockit-mcp](https://github.com/karyaboyraz/mockit-mcp) | Node.js | `npx -y karyaboyraz/mockit-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mockit-mcp) |
+| [**Skillselion MCP**](https://mcp-serverlist.com/mcp/skillselion-mcp) | @skillselion | [skillselion-mcp](https://github.com/skillselion/skillselion-mcp) | Node.js | `npx -y skillselion/skillselion-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/skillselion-mcp) |
+| [**Infyicon MCP**](https://mcp-serverlist.com/mcp/infyicon-mcp) | @krupalghori44-dev | [infyicon-mcp](https://github.com/krupalghori44-dev/infyicon-mcp) | Node.js | `npx -y krupalghori44-dev/infyicon-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/infyicon-mcp) |
+| [**Pymol MCP**](https://mcp-serverlist.com/mcp/pymol-mcp) | @wjgoarxiv | [pymol-mcp](https://github.com/wjgoarxiv/pymol-mcp) | Python | `uvx pymol-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/pymol-mcp) |
+| [**Awesome Mcp Tools**](https://mcp-serverlist.com/mcp/awesome-mcp-tools-mcp) | @adw0rd | [awesome-mcp-tools-mcp](https://github.com/adw0rd/awesome-mcp-tools-mcp) | Node.js | `npx -y adw0rd/awesome-mcp-tools-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/awesome-mcp-tools-mcp) |
+| [**Yandex Music MCP**](https://mcp-serverlist.com/mcp/yandex-music-mcp) | @kenzolika | [yandex-music-mcp](https://github.com/kenzolika/yandex-music-mcp) | Python | `uvx yandex-music-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/yandex-music-mcp) |
+| [**Aria Mcp**](https://mcp-serverlist.com/mcp/aria-mcp-server) | @pkotecha-eng | [aria-mcp-server](https://github.com/pkotecha-eng/aria-mcp-server) | Python | `uvx aria-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/aria-mcp-server) |
+| [**Open Library MCP**](https://mcp-serverlist.com/mcp/mcp-open-library) | @8enSmith | [mcp-open-library](https://github.com/8enSmith/mcp-open-library) | Node.js | `npx -y 8enSmith/mcp-open-library` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-open-library) |
+| [**Gateway MCP**](https://mcp-serverlist.com/mcp/mcp-gateway-1) | @ViperJuice | [mcp-gateway](https://github.com/ViperJuice/mcp-gateway) | Python | `uvx mcp-gateway` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-gateway-1) |
+| [**Coinopai MCP**](https://mcp-serverlist.com/mcp/coinopai-mcp) | @forgemeshlabs | [coinopai-mcp](https://github.com/forgemeshlabs/coinopai-mcp) | Node.js | `npx -y forgemeshlabs/coinopai-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/coinopai-mcp) |
+| [**Openhire MCP**](https://mcp-serverlist.com/mcp/openhire) | @gzchenhao | [openhire](https://github.com/gzchenhao/openhire) | Python | `uvx openhire` | [⚡ Config](https://mcp-serverlist.com/mcp/openhire) |
+| [**Posecode MCP**](https://mcp-serverlist.com/mcp/posecode) | @posecode-dev | [posecode](https://github.com/posecode-dev/posecode) | Node.js | `npx -y posecode-dev/posecode` | [⚡ Config](https://mcp-serverlist.com/mcp/posecode) |
+| [**Bothiremcpserver**](https://mcp-serverlist.com/mcp/bothiremcpserver) | @BotHireAgent | [BotHireMCPServer](https://github.com/BotHireAgent/BotHireMCPServer) | Node.js | `npx -y BotHireAgent/BotHireMCPServer` | [⚡ Config](https://mcp-serverlist.com/mcp/bothiremcpserver) |
+| [**Remoteopenclaw MCP**](https://mcp-serverlist.com/mcp/remoteopenclaw-mcp) | @aidevelopers2 | [remoteopenclaw-mcp](https://github.com/aidevelopers2/remoteopenclaw-mcp) | Node.js | `npx -y aidevelopers2/remoteopenclaw-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/remoteopenclaw-mcp) |
+| [**Wellness Nourish MCP**](https://mcp-serverlist.com/mcp/wellness-nourish) | @davidmosiah | [wellness-nourish](https://github.com/davidmosiah/wellness-nourish) | Node.js | `npx -y davidmosiah/wellness-nourish` | [⚡ Config](https://mcp-serverlist.com/mcp/wellness-nourish) |
+| [**Reefapi MCP**](https://mcp-serverlist.com/mcp/reefapi-mcp) | @reefapi | [reefapi-mcp](https://github.com/reefapi/reefapi-mcp) | Python | `uvx reefapi-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/reefapi-mcp) |
+| [**Noodle MCP**](https://mcp-serverlist.com/mcp/noodle-mcp) | @helena-bioinformatics | [noodle-mcp](https://github.com/helena-bioinformatics/noodle-mcp) | Python | `uvx noodle-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/noodle-mcp) |
+| [**Ao3 MCP**](https://mcp-serverlist.com/mcp/ao3-mcp) | @ArturLys | [ao3-mcp](https://github.com/ArturLys/ao3-mcp) | Python | `uvx ao3-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ao3-mcp) |
+| [**Imslp MCP**](https://mcp-serverlist.com/mcp/mcp-imslp) | @smeet666 | [mcp-imslp](https://github.com/smeet666/mcp-imslp) | Node.js | `npx -y smeet666/mcp-imslp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-imslp) |
+| [**Books MCP**](https://mcp-serverlist.com/mcp/mcp-books) | @smeet666 | [mcp-books](https://github.com/smeet666/mcp-books) | Node.js | `npx -y smeet666/mcp-books` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-books) |
+| [**Alphabanana MCP**](https://mcp-serverlist.com/mcp/mcp-alphabanana) | @tasopen | [mcp-alphabanana](https://github.com/tasopen/mcp-alphabanana) | Node.js | `npx -y tasopen/mcp-alphabanana` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-alphabanana) |
+| [**Aisa Mcp**](https://mcp-serverlist.com/mcp/aisa-mcp-server) | @AIsa-public | [AIsa-mcp-server](https://github.com/AIsa-public/AIsa-mcp-server) | Node.js | `npx -y AIsa-public/AIsa-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/aisa-mcp-server) |
+| [**Agenthotspot MCP**](https://mcp-serverlist.com/mcp/agenthotspot-mcp) | @AgentHotspot | [agenthotspot-mcp](https://github.com/AgentHotspot/agenthotspot-mcp) | Python | `uvx agenthotspot-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/agenthotspot-mcp) |
+| [**Biomcp**](https://mcp-serverlist.com/mcp/biomcp) | @genomoncology | [biomcp](https://github.com/genomoncology/biomcp) | Python | `uvx biomcp` | [⚡ Config](https://mcp-serverlist.com/mcp/biomcp) |
+| [**Allmcps**](https://mcp-serverlist.com/mcp/allmcps-server) | @Jackalope-Dev | [allmcps-server](https://github.com/Jackalope-Dev/allmcps-server) | Node.js | `npx -y Jackalope-Dev/allmcps-server` | [⚡ Config](https://mcp-serverlist.com/mcp/allmcps-server) |
+| [**Aesthetics Wiki MCP**](https://mcp-serverlist.com/mcp/aesthetics-wiki-mcp) | @leonardoca1 | [aesthetics-wiki-mcp](https://github.com/leonardoca1/aesthetics-wiki-mcp) | Python | `uvx aesthetics-wiki-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/aesthetics-wiki-mcp) |
+| [**3dtexel MCP**](https://mcp-serverlist.com/mcp/3dtexel-mcp) | @Gatyh | [3dtexel-mcp](https://github.com/Gatyh/3dtexel-mcp) | Node.js | `npx -y Gatyh/3dtexel-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/3dtexel-mcp) |
+| [**Microtap MCP**](https://mcp-serverlist.com/mcp/microtap-mcp) | @swaltersjrtest | [microtap-mcp](https://github.com/swaltersjrtest/microtap-mcp) | Node.js | `npx -y swaltersjrtest/microtap-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/microtap-mcp) |
+| [**Shakespeare Monologues MCP**](https://mcp-serverlist.com/mcp/shakespeare-monologues-mcp) | @slshults | [shakespeare-monologues-mcp](https://github.com/slshults/shakespeare-monologues-mcp) | Node.js | `npx -y slshults/shakespeare-monologues-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/shakespeare-monologues-mcp) |
+| [**Cinderwright Api MCP**](https://mcp-serverlist.com/mcp/cinderwright-api) | @cinderwright-ai | [cinderwright-api](https://github.com/cinderwright-ai/cinderwright-api) | Node.js | `npx -y cinderwright-ai/cinderwright-api` | [⚡ Config](https://mcp-serverlist.com/mcp/cinderwright-api) |
+| [**Fhir Mcp**](https://mcp-serverlist.com/mcp/fhir-mcp-server-1) | @wso2 | [fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | Python | `uvx fhir-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/fhir-mcp-server-1) |
 
 ---
 
-### 🌐 Web Browsing & Search
-| Server Name | Description | Runtime | Quick Install / Run | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| **Brave Search** | Real-time web and local search via Brave Search API. | Node.js | `npx -y @modelcontextprotocol/server-brave-search` | [View on Web](https://mcp-serverlist.com) |
-| **Puppeteer** | Headless browser automation, scraping, and screenshot capture. | Node.js | `npx -y @modelcontextprotocol/server-puppeteer` | [View on Web](https://mcp-serverlist.com) |
-| **Fetch** | Fast web content fetching with automatic Markdown conversion. | Python | `uvx mcp-server-fetch` | [View on Web](https://mcp-serverlist.com) |
-| **Playwright** | Full browser automation with multi-tab evaluation. | Node.js | `npx -y @playwright/mcp-server` | [View on Web](https://mcp-serverlist.com) |
-| **Firecrawl** | Turn any webpage into clean LLM-ready markdown. | Node.js | `npx -y firecrawl-mcp` | [View on Web](https://mcp-serverlist.com) |
+### ⚡ Productivity & Workspaces (104 Servers)
 
-👉 *[Browse all 25+ Web Browsing Servers on MCP ServerList](https://mcp-serverlist.com/category/web-browsing)*
+> Notes, file systems, task management, knowledge graphs, and office tools.  
+> 🔗 *Browse & filter all 104 servers online: [mcp-serverlist.com/category/productivity](https://mcp-serverlist.com/category/productivity)*
+
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**N8n MCP**](https://mcp-serverlist.com/mcp/n8n) | @n8n-io | [n8n](https://github.com/n8n-io/n8n) | Node.js | `npx -y @modelcontextprotocol/server-n8n` | [⚡ Config](https://mcp-serverlist.com/mcp/n8n) |
+| [**Awesome Claude Skills MCP**](https://mcp-serverlist.com/mcp/awesome-claude-skills) | @ComposioHQ | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Python | `uvx mcp-server-awesome-claude-skills` | [⚡ Config](https://mcp-serverlist.com/mcp/awesome-claude-skills) |
+| [**Mempalace MCP**](https://mcp-serverlist.com/mcp/mempalace) | @MemPalace | [mempalace](https://github.com/MemPalace/mempalace) | Python | `uvx mcp-server-mempalace` | [⚡ Config](https://mcp-serverlist.com/mcp/mempalace) |
+| [**Ai Agent Book MCP**](https://mcp-serverlist.com/mcp/ai-agent-book) | @bojieli | [ai-agent-book](https://github.com/bojieli/ai-agent-book) | Python | `uvx mcp-server-ai-agent-book` | [⚡ Config](https://mcp-serverlist.com/mcp/ai-agent-book) |
+| [**Agentic Awesome Skills MCP**](https://mcp-serverlist.com/mcp/agentic-awesome-skills) | @sickn33 | [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | Python | `uvx mcp-server-agentic-awesome-skills` | [⚡ Config](https://mcp-serverlist.com/mcp/agentic-awesome-skills) |
+| [**Siyuan MCP**](https://mcp-serverlist.com/mcp/siyuan) | @siyuan-note | [siyuan](https://github.com/siyuan-note/siyuan) | Node.js | `npx -y @modelcontextprotocol/server-siyuan` | [⚡ Config](https://mcp-serverlist.com/mcp/siyuan) |
+| [**Anthropic Cybersecurity Skills MCP**](https://mcp-serverlist.com/mcp/anthropic-cybersecurity-skills) | @mukul975 | [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | Python | `uvx mcp-server-anthropic-cybersecurity-skills` | [⚡ Config](https://mcp-serverlist.com/mcp/anthropic-cybersecurity-skills) |
+| [**Fastgpt MCP**](https://mcp-serverlist.com/mcp/fastgpt) | @labring | [FastGPT](https://github.com/labring/FastGPT) | Node.js | `npx -y @modelcontextprotocol/server-fastgpt` | [⚡ Config](https://mcp-serverlist.com/mcp/fastgpt) |
+| [**Context Mode MCP**](https://mcp-serverlist.com/mcp/context-mode) | @mksglu | [context-mode](https://github.com/mksglu/context-mode) | Node.js | `npx -y @modelcontextprotocol/server-context-mode` | [⚡ Config](https://mcp-serverlist.com/mcp/context-mode) |
+| [**Activepieces MCP**](https://mcp-serverlist.com/mcp/activepieces) | @activepieces | [activepieces](https://github.com/activepieces/activepieces) | Node.js | `npx -y @modelcontextprotocol/server-activepieces` | [⚡ Config](https://mcp-serverlist.com/mcp/activepieces) |
+| [**N8n MCP**](https://mcp-serverlist.com/mcp/n8n-mcp) | @czlonkowski | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | Node.js | `npx -y @modelcontextprotocol/server-n8n-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/n8n-mcp) |
+| [**Screenpipe MCP**](https://mcp-serverlist.com/mcp/screenpipe) | @screenpipe | [screenpipe](https://github.com/screenpipe/screenpipe) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/screenpipe) |
+| [**Excelize MCP**](https://mcp-serverlist.com/mcp/excelize) | @qax-os | [excelize](https://github.com/qax-os/excelize) | Go | `go run github.com/qax-os/excelize` | [⚡ Config](https://mcp-serverlist.com/mcp/excelize) |
+| [**Skillspector MCP**](https://mcp-serverlist.com/mcp/skillspector) | @NVIDIA | [SkillSpector](https://github.com/NVIDIA/SkillSpector) | Python | `uvx mcp-server-skillspector` | [⚡ Config](https://mcp-serverlist.com/mcp/skillspector) |
+| [**Easy Vibe MCP**](https://mcp-serverlist.com/mcp/easy-vibe) | @datawhalechina | [easy-vibe](https://github.com/datawhalechina/easy-vibe) | Node.js | `npx -y @modelcontextprotocol/server-easy-vibe` | [⚡ Config](https://mcp-serverlist.com/mcp/easy-vibe) |
+| [**Google Drive & Docs MCP**](https://mcp-serverlist.com/mcp/google-drive) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive) | Node.js | `npx -y @modelcontextprotocol/server-gdrive` | [⚡ Config](https://mcp-serverlist.com/mcp/google-drive) |
+| [**Knowledge Graph Long-Term Memory MCP**](https://mcp-serverlist.com/mcp/memory) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | Node.js | `npx -y @modelcontextprotocol/server-memory` | [⚡ Config](https://mcp-serverlist.com/mcp/memory) |
+| [**Secure Local Filesystem MCP**](https://mcp-serverlist.com/mcp/filesystem) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Node.js | `npx -y @modelcontextprotocol/server-filesystem /Users/username/Desktop` | [⚡ Config](https://mcp-serverlist.com/mcp/filesystem) |
+| [**Notion Workspace MCP**](https://mcp-serverlist.com/mcp/notion) | @suekou | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | Node.js | `npx -y @suekou/mcp-notion-server` | [⚡ Config](https://mcp-serverlist.com/mcp/notion) |
+| [**Airtable Relational Workspace MCP**](https://mcp-serverlist.com/mcp/airtable) | @airtable | [mcp-server-airtable](https://github.com/airtable/mcp-server-airtable) | Node.js | `npx -y @airtable/mcp-server-airtable` | [⚡ Config](https://mcp-serverlist.com/mcp/airtable) |
+| [**Google Calendar & Events MCP**](https://mcp-serverlist.com/mcp/google-calendar) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/gcalendar) | Node.js | `npx -y @modelcontextprotocol/server-gcalendar` | [⚡ Config](https://mcp-serverlist.com/mcp/google-calendar) |
+| [**Obsidian Markdown Vault MCP**](https://mcp-serverlist.com/mcp/obsidian) | @calclavia | [mcp-obsidian](https://github.com/calclavia/mcp-obsidian) | Node.js | `npx -y mcp-obsidian /path/to/ObsidianVault` | [⚡ Config](https://mcp-serverlist.com/mcp/obsidian) |
+| [**CSV & Excel Data Analyzer MCP**](https://mcp-serverlist.com/mcp/csv-analyzer) | @mcp-extensions | [mcp-csv-analyzer](https://github.com/mcp-extensions/mcp-csv-analyzer) | Python | `uvx mcp-csv-analyzer` | [⚡ Config](https://mcp-serverlist.com/mcp/csv-analyzer) |
+| [**Atlassian Confluence Wiki MCP**](https://mcp-serverlist.com/mcp/confluence) | @atlassian | [mcp-server-confluence](https://github.com/atlassian/mcp-server-confluence) | Node.js | `npx -y @atlassian/mcp-server-confluence` | [⚡ Config](https://mcp-serverlist.com/mcp/confluence) |
+| [**Todoist Task & Project MCP**](https://mcp-serverlist.com/mcp/todoist) | @abhiz123 | [todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server) | Node.js | `npx -y todoist-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/todoist) |
+| [**ClickUp Workspace & Tasks MCP**](https://mcp-serverlist.com/mcp/clickup) | @clickup | [mcp-server-clickup](https://github.com/clickup/mcp-server-clickup) | Node.js | `npx -y mcp-server-clickup` | [⚡ Config](https://mcp-serverlist.com/mcp/clickup) |
+| [**Apple Notes macOS Integration MCP**](https://mcp-serverlist.com/mcp/apple-notes) | @mcp-community | [mcp-apple-notes](https://github.com/mcp-community/mcp-apple-notes) | Python | `uvx mcp-apple-notes` | [⚡ Config](https://mcp-serverlist.com/mcp/apple-notes) |
+| [**Readwise Reader & Highlights MCP**](https://mcp-serverlist.com/mcp/readwise) | @readwiseio | [mcp-server-readwise](https://github.com/readwiseio/mcp-server-readwise) | Node.js | `npx -y mcp-server-readwise` | [⚡ Config](https://mcp-serverlist.com/mcp/readwise) |
+| [**Crimson Crab Mcp Template**](https://mcp-serverlist.com/mcp/crimson-crab-mcp-template) | @singhpratech | [crimson-crab-mcp-template](https://github.com/singhpratech/crimson-crab-mcp-template) | Rust | `npx -y singhpratech/crimson-crab-mcp-template` | [⚡ Config](https://mcp-serverlist.com/mcp/crimson-crab-mcp-template) |
+| [**Pluggedin Mcp Proxy**](https://mcp-serverlist.com/mcp/pluggedin-mcp-proxy) | @VeriTeknik | [pluggedin-mcp-proxy](https://github.com/VeriTeknik/pluggedin-mcp-proxy) | Node.js | `npx -y VeriTeknik/pluggedin-mcp-proxy` | [⚡ Config](https://mcp-serverlist.com/mcp/pluggedin-mcp-proxy) |
+| [**Craft Docs Nested Notes MCP**](https://mcp-serverlist.com/mcp/craft-docs) | @craftdocs | [mcp-server-craft](https://github.com/craftdocs/mcp-server-craft) | Node.js | `npx -y mcp-server-craft` | [⚡ Config](https://mcp-serverlist.com/mcp/craft-docs) |
+| [**Metatool App MCP**](https://mcp-serverlist.com/mcp/metatool-app) | @metatool-ai | [metatool-app](https://github.com/metatool-ai/metatool-app) | Node.js | `npx -y metatool-ai/metatool-app` | [⚡ Config](https://mcp-serverlist.com/mcp/metatool-app) |
+| [**Alderpost MCP**](https://mcp-serverlist.com/mcp/alderpost-mcp) | @8randonpickart5 | [alderpost-mcp](https://github.com/8randonpickart5/alderpost-mcp) | Node.js | `npx -y 8randonpickart5/alderpost-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/alderpost-mcp) |
+| [**Open Task Relay Public MCP**](https://mcp-serverlist.com/mcp/open-task-relay-public) | @lanekingsbery | [open-task-relay-public](https://github.com/lanekingsbery/open-task-relay-public) | Node.js | `npx -y lanekingsbery/open-task-relay-public` | [⚡ Config](https://mcp-serverlist.com/mcp/open-task-relay-public) |
+| [**Agy Bridge MCP**](https://mcp-serverlist.com/mcp/agy-bridge) | @sshahzaiib | [agy-bridge](https://github.com/sshahzaiib/agy-bridge) | Node.js | `npx -y sshahzaiib/agy-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/agy-bridge) |
+| [**Imagen3 MCP**](https://mcp-serverlist.com/mcp/imagen3-mcp) | @hamflx | [imagen3-mcp](https://github.com/hamflx/imagen3-mcp) | Node.js | `npx -y hamflx/imagen3-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/imagen3-mcp) |
+| [**Firefox Devtools MCP**](https://mcp-serverlist.com/mcp/firefox-devtools-mcp) | @freema | [firefox-devtools-mcp](https://github.com/freema/firefox-devtools-mcp) | Node.js | `npx -y freema/firefox-devtools-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/firefox-devtools-mcp) |
+| [**Personalizationmcp**](https://mcp-serverlist.com/mcp/personalizationmcp) | @YangLiangwei | [PersonalizationMCP](https://github.com/YangLiangwei/PersonalizationMCP) | Python | `uvx PersonalizationMCP` | [⚡ Config](https://mcp-serverlist.com/mcp/personalizationmcp) |
+| [**Outsource MCP**](https://mcp-serverlist.com/mcp/outsource-mcp) | @gwbischof | [outsource-mcp](https://github.com/gwbischof/outsource-mcp) | Python | `uvx outsource-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/outsource-mcp) |
+| [**Releases MCP**](https://mcp-serverlist.com/mcp/releases) | @Proofpane | [releases](https://github.com/Proofpane/releases) | Node.js | `npx -y Proofpane/releases` | [⚡ Config](https://mcp-serverlist.com/mcp/releases) |
+| [**Hetzner Dns MCP**](https://mcp-serverlist.com/mcp/hetzner-dns-mcp) | @ni-c | [hetzner-dns-mcp](https://github.com/ni-c/hetzner-dns-mcp) | Node.js | `npx -y ni-c/hetzner-dns-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/hetzner-dns-mcp) |
+| [**Ratatosk MCP**](https://mcp-serverlist.com/mcp/ratatosk-mcp) | @garlicKim21 | [ratatosk-mcp](https://github.com/garlicKim21/ratatosk-mcp) | Node.js | `npx -y garlicKim21/ratatosk-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ratatosk-mcp) |
+| [**Lambdacad MCP**](https://mcp-serverlist.com/mcp/lambdacad-mcp) | @Psalmustrack | [lambdacad-mcp](https://github.com/Psalmustrack/lambdacad-mcp) | Python | `uvx lambdacad-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/lambdacad-mcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-3) | @noteboxd | [mcp](https://github.com/noteboxd/mcp) | Node.js | `npx -y noteboxd/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-3) |
+| [**Diagramzu MCP**](https://mcp-serverlist.com/mcp/diagramzu-mcp) | @yenchieh | [diagramzu-mcp](https://github.com/yenchieh/diagramzu-mcp) | Node.js | `npx -y yenchieh/diagramzu-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/diagramzu-mcp) |
+| [**Context Firewall MCP**](https://mcp-serverlist.com/mcp/context-firewall) | @Alepha188838884 | [context-firewall](https://github.com/Alepha188838884/context-firewall) | Node.js | `npx -y Alepha188838884/context-firewall` | [⚡ Config](https://mcp-serverlist.com/mcp/context-firewall) |
+| [**Openapi Mcp Gateway**](https://mcp-serverlist.com/mcp/openapi-mcp-gateway) | @mroops0111 | [openapi-mcp-gateway](https://github.com/mroops0111/openapi-mcp-gateway) | Python | `uvx openapi-mcp-gateway` | [⚡ Config](https://mcp-serverlist.com/mcp/openapi-mcp-gateway) |
+| [**Repo Cartographer MCP**](https://mcp-serverlist.com/mcp/repo-cartographer) | @builditwithgk | [repo-cartographer](https://github.com/builditwithgk/repo-cartographer) | Node.js | `npx -y builditwithgk/repo-cartographer` | [⚡ Config](https://mcp-serverlist.com/mcp/repo-cartographer) |
+| [**Scenef MCP**](https://mcp-serverlist.com/mcp/scenef-mcp) | @speedwarnsf | [scenef-mcp](https://github.com/speedwarnsf/scenef-mcp) | Node.js | `npx -y speedwarnsf/scenef-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/scenef-mcp) |
+| [**Opentakeoff MCP**](https://mcp-serverlist.com/mcp/opentakeoff) | @Kentucky-ai | [opentakeoff](https://github.com/Kentucky-ai/opentakeoff) | Node.js | `npx -y Kentucky-ai/opentakeoff` | [⚡ Config](https://mcp-serverlist.com/mcp/opentakeoff) |
+| [**Adls Mcp**](https://mcp-serverlist.com/mcp/adls-mcp-server) | @erikhoward | [adls-mcp-server](https://github.com/erikhoward/adls-mcp-server) | Python | `uvx adls-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/adls-mcp-server) |
+| [**Openai Gpt Image MCP**](https://mcp-serverlist.com/mcp/openai-gpt-image-mcp) | @SureScaleAI | [openai-gpt-image-mcp](https://github.com/SureScaleAI/openai-gpt-image-mcp) | Node.js | `npx -y SureScaleAI/openai-gpt-image-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/openai-gpt-image-mcp) |
+| [**Visionaire Engine MCP**](https://mcp-serverlist.com/mcp/visionaire-engine) | @mi60dev | [visionaire-engine](https://github.com/mi60dev/visionaire-engine) | Node.js | `npx -y mi60dev/visionaire-engine` | [⚡ Config](https://mcp-serverlist.com/mcp/visionaire-engine) |
+| [**Jp MCP**](https://mcp-serverlist.com/mcp/mcp-jp) | @mediiiiium | [mcp-jp](https://github.com/mediiiiium/mcp-jp) | Python | `uvx mcp-jp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-jp) |
+| [**Mcpbundles**](https://mcp-serverlist.com/mcp/mcpbundles) | @thinkchainai | [mcpbundles](https://github.com/thinkchainai/mcpbundles) | Node.js | `npx -y thinkchainai/mcpbundles` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpbundles) |
+| [**Pulsenetwork MCP**](https://mcp-serverlist.com/mcp/pulsenetwork-mcp) | @GTCC777 | [pulsenetwork-mcp](https://github.com/GTCC777/pulsenetwork-mcp) | Node.js | `npx -y GTCC777/pulsenetwork-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/pulsenetwork-mcp) |
+| [**Openai Bridge MCP**](https://mcp-serverlist.com/mcp/mcp-server-openai-bridge) | @jaspertvdm | [mcp-server-openai-bridge](https://github.com/jaspertvdm/mcp-server-openai-bridge) | Python | `uvx mcp-server-openai-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-openai-bridge) |
+| [**Roundtable MCP**](https://mcp-serverlist.com/mcp/roundtable) | @askbudi | [roundtable](https://github.com/askbudi/roundtable) | Node.js | `npx -y askbudi/roundtable` | [⚡ Config](https://mcp-serverlist.com/mcp/roundtable) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-7) | @adiosdotdev | [mcp](https://github.com/adiosdotdev/mcp) | Node.js | `npx -y adiosdotdev/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-7) |
+| [**Mcpproxy Go**](https://mcp-serverlist.com/mcp/mcpproxy-go) | @smart-mcp-proxy | [mcpproxy-go](https://github.com/smart-mcp-proxy/mcpproxy-go) | Node.js | `npx -y smart-mcp-proxy/mcpproxy-go` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpproxy-go) |
+| [**Blockrun MCP**](https://mcp-serverlist.com/mcp/blockrun-mcp) | @blockrunai | [blockrun-mcp](https://github.com/blockrunai/blockrun-mcp) | Node.js | `npx -y blockrunai/blockrun-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/blockrun-mcp) |
+| [**Mcpqueen**](https://mcp-serverlist.com/mcp/mcpqueen) | @mcpqueen | [mcpqueen](https://github.com/mcpqueen/mcpqueen) | Node.js | `npx -y mcpqueen/mcpqueen` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpqueen) |
+| [**Reaper Daemon MCP**](https://mcp-serverlist.com/mcp/reaper-daemon) | @wretcher207 | [reaper-daemon](https://github.com/wretcher207/reaper-daemon) | Python | `uvx reaper-daemon` | [⚡ Config](https://mcp-serverlist.com/mcp/reaper-daemon) |
+| [**Anomaly MCP**](https://mcp-serverlist.com/mcp/anomaly-mcp) | @forgemeshlabs | [anomaly-mcp](https://github.com/forgemeshlabs/anomaly-mcp) | Node.js | `npx -y forgemeshlabs/anomaly-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/anomaly-mcp) |
+| [**Ergonia MCP**](https://mcp-serverlist.com/mcp/ergonia) | @ianewsfr-a11y | [ergonia](https://github.com/ianewsfr-a11y/ergonia) | Node.js | `npx -y ianewsfr-a11y/ergonia` | [⚡ Config](https://mcp-serverlist.com/mcp/ergonia) |
+| [**Ncp MCP**](https://mcp-serverlist.com/mcp/ncp) | @portel-dev | [ncp](https://github.com/portel-dev/ncp) | Node.js | `npx -y portel-dev/ncp` | [⚡ Config](https://mcp-serverlist.com/mcp/ncp) |
+| [**K8m MCP**](https://mcp-serverlist.com/mcp/k8m) | @weibaohui | [k8m](https://github.com/weibaohui/k8m) | Node.js | `npx -y weibaohui/k8m` | [⚡ Config](https://mcp-serverlist.com/mcp/k8m) |
+| [**Taghvim MCP**](https://mcp-serverlist.com/mcp/taghvim) | @mrfelfel | [taghvim](https://github.com/mrfelfel/taghvim) | Node.js | `npx -y mrfelfel/taghvim` | [⚡ Config](https://mcp-serverlist.com/mcp/taghvim) |
+| [**Grok MCP**](https://mcp-serverlist.com/mcp/grok-mcp) | @merterbak | [Grok-MCP](https://github.com/merterbak/Grok-MCP) | Python | `uvx Grok-MCP` | [⚡ Config](https://mcp-serverlist.com/mcp/grok-mcp) |
+| [**402signal MCP**](https://mcp-serverlist.com/mcp/402signal) | @402signalhq | [402signal](https://github.com/402signalhq/402signal) | Python | `uvx 402signal` | [⚡ Config](https://mcp-serverlist.com/mcp/402signal) |
+| [**Aimarket Plugins MCP**](https://mcp-serverlist.com/mcp/aimarket-plugins) | @alexar76 | [aimarket-plugins](https://github.com/alexar76/aimarket-plugins) | Node.js | `npx -y alexar76/aimarket-plugins` | [⚡ Config](https://mcp-serverlist.com/mcp/aimarket-plugins) |
+| [**Capmonster Mcp Captcha Solver**](https://mcp-serverlist.com/mcp/capmonster-mcp-captcha-solver) | @CapMonsterCloud | [capmonster-mcp-captcha-solver](https://github.com/CapMonsterCloud/capmonster-mcp-captcha-solver) | Python | `uvx capmonster-mcp-captcha-solver` | [⚡ Config](https://mcp-serverlist.com/mcp/capmonster-mcp-captcha-solver) |
+| [**Gtm Suite MCP**](https://mcp-serverlist.com/mcp/mcp-gtm-suite) | @mambalabsdev | [mcp-gtm-suite](https://github.com/mambalabsdev/mcp-gtm-suite) | Node.js | `npx -y mambalabsdev/mcp-gtm-suite` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-gtm-suite) |
+| [**Chrome Bridge MCP**](https://mcp-serverlist.com/mcp/chrome-bridge) | @frsorrentino | [chrome-bridge](https://github.com/frsorrentino/chrome-bridge) | Node.js | `npx -y frsorrentino/chrome-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/chrome-bridge) |
+| [**Open MCP**](https://mcp-serverlist.com/mcp/open-mcp) | @wegotdocs | [open-mcp](https://github.com/wegotdocs/open-mcp) | Node.js | `npx -y wegotdocs/open-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/open-mcp) |
+| [**Mcpdiscovery**](https://mcp-serverlist.com/mcp/1mcpserver) | @particlefuture | [1mcpserver](https://github.com/particlefuture/1mcpserver) | Python | `uvx 1mcpserver` | [⚡ Config](https://mcp-serverlist.com/mcp/1mcpserver) |
+| [**X402 Discovery MCP**](https://mcp-serverlist.com/mcp/x402-discovery-mcp) | @rplryan | [x402-discovery-mcp](https://github.com/rplryan/x402-discovery-mcp) | Python | `uvx x402-discovery-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/x402-discovery-mcp) |
+| [**Svgmaker MCP**](https://mcp-serverlist.com/mcp/svgmaker-mcp) | @GenWaveLLC | [svgmaker-mcp](https://github.com/GenWaveLLC/svgmaker-mcp) | Node.js | `npx -y GenWaveLLC/svgmaker-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/svgmaker-mcp) |
+| [**Gemini Bridge MCP**](https://mcp-serverlist.com/mcp/mcp-server-gemini-bridge) | @jaspertvdm | [mcp-server-gemini-bridge](https://github.com/jaspertvdm/mcp-server-gemini-bridge) | Python | `uvx mcp-server-gemini-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-gemini-bridge) |
+| [**Rhumb MCP**](https://mcp-serverlist.com/mcp/rhumb) | @supertrained | [rhumb](https://github.com/supertrained/rhumb) | Node.js | `npx -y supertrained/rhumb` | [⚡ Config](https://mcp-serverlist.com/mcp/rhumb) |
+| [**Nodriver Mcp**](https://mcp-serverlist.com/mcp/nodriver-mcp-server) | @andresolbach | [nodriver-mcp-server](https://github.com/andresolbach/nodriver-mcp-server) | Python | `uvx nodriver-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/nodriver-mcp-server) |
+| [**Domshell MCP**](https://mcp-serverlist.com/mcp/domshell) | @apireno | [DOMShell](https://github.com/apireno/DOMShell) | Node.js | `npx -y apireno/DOMShell` | [⚡ Config](https://mcp-serverlist.com/mcp/domshell) |
+| [**Access Point MCP**](https://mcp-serverlist.com/mcp/mcp-access-point) | @sxhxliang | [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) | Node.js | `npx -y sxhxliang/mcp-access-point` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-access-point) |
+| [**Munim MCP**](https://mcp-serverlist.com/mcp/munim) | @vishalsg42 | [munim](https://github.com/vishalsg42/munim) | Python | `uvx munim` | [⚡ Config](https://mcp-serverlist.com/mcp/munim) |
+| [**Mirastack Redfish MCP**](https://mcp-serverlist.com/mcp/mirastack-redfish-mcp) | @mirastacklabs-ai | [mirastack-redfish-mcp](https://github.com/mirastacklabs-ai/mirastack-redfish-mcp) | Python | `uvx mirastack-redfish-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mirastack-redfish-mcp) |
+| [**Ankusdrive MCP**](https://mcp-serverlist.com/mcp/ankusdrive) | @gchen19 | [AnkusDrive](https://github.com/gchen19/AnkusDrive) | Python | `uvx AnkusDrive` | [⚡ Config](https://mcp-serverlist.com/mcp/ankusdrive) |
+| [**Kom MCP**](https://mcp-serverlist.com/mcp/kom) | @weibaohui | [kom](https://github.com/weibaohui/kom) | Node.js | `npx -y weibaohui/kom` | [⚡ Config](https://mcp-serverlist.com/mcp/kom) |
+| [**Kansei Mcp**](https://mcp-serverlist.com/mcp/kansei-mcp-server) | @kansei-link | [kansei-mcp-server](https://github.com/kansei-link/kansei-mcp-server) | Node.js | `npx -y kansei-link/kansei-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/kansei-mcp-server) |
+| [**Flowzap MCP**](https://mcp-serverlist.com/mcp/flowzap-mcp) | @flowzap-xyz | [flowzap-mcp](https://github.com/flowzap-xyz/flowzap-mcp) | Node.js | `npx -y flowzap-xyz/flowzap-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/flowzap-mcp) |
+| [**The Stall MCP**](https://mcp-serverlist.com/mcp/the-stall) | @thebrierfox | [the-stall](https://github.com/thebrierfox/the-stall) | Node.js | `npx -y thebrierfox/the-stall` | [⚡ Config](https://mcp-serverlist.com/mcp/the-stall) |
+| [**Depwire MCP**](https://mcp-serverlist.com/mcp/depwire) | @depwire | [depwire](https://github.com/depwire/depwire) | Python | `uvx depwire` | [⚡ Config](https://mcp-serverlist.com/mcp/depwire) |
+| [**Maket MCP**](https://mcp-serverlist.com/mcp/maket) | @ng-galien | [maket](https://github.com/ng-galien/maket) | Node.js | `npx -y ng-galien/maket` | [⚡ Config](https://mcp-serverlist.com/mcp/maket) |
+| [**Contradiction MCP**](https://mcp-serverlist.com/mcp/contradiction-mcp) | @Daksh-create349 | [Contradiction-MCP](https://github.com/Daksh-create349/Contradiction-MCP) | Node.js | `npx -y Daksh-create349/Contradiction-MCP` | [⚡ Config](https://mcp-serverlist.com/mcp/contradiction-mcp) |
+| [**Hub MCP**](https://mcp-serverlist.com/mcp/mcp-hub) | @ni-c | [mcp-hub](https://github.com/ni-c/mcp-hub) | Node.js | `npx -y ni-c/mcp-hub` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-hub) |
+| [**Gateway MCP**](https://mcp-serverlist.com/mcp/mcp-gateway) | @MikkoParkkola | [mcp-gateway](https://github.com/MikkoParkkola/mcp-gateway) | Node.js | `npx -y MikkoParkkola/mcp-gateway` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-gateway) |
+| [**Reasongate MCP**](https://mcp-serverlist.com/mcp/reasongate) | @cgrtml | [reasongate](https://github.com/cgrtml/reasongate) | Python | `uvx reasongate` | [⚡ Config](https://mcp-serverlist.com/mcp/reasongate) |
+| [**Humanforai MCP**](https://mcp-serverlist.com/mcp/humanforai-mcp) | @humanforai | [humanforai-mcp](https://github.com/humanforai/humanforai-mcp) | Node.js | `npx -y humanforai/humanforai-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/humanforai-mcp) |
+| [**Apibase MCP**](https://mcp-serverlist.com/mcp/apibase) | @whiteknightonhorse | [APIbase](https://github.com/whiteknightonhorse/APIbase) | Node.js | `npx -y whiteknightonhorse/APIbase` | [⚡ Config](https://mcp-serverlist.com/mcp/apibase) |
+| [**Templates MCP**](https://mcp-serverlist.com/mcp/mcp-server-templates) | @Data-Everything | [mcp-server-templates](https://github.com/Data-Everything/mcp-server-templates) | Node.js | `npx -y Data-Everything/mcp-server-templates` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-templates) |
+| [**Mcpmcp**](https://mcp-serverlist.com/mcp/mcpmcp-server) | @glenngillen | [mcpmcp-server](https://github.com/glenngillen/mcpmcp-server) | Node.js | `npx -y glenngillen/mcpmcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpmcp-server) |
+| [**Fulcra Context MCP**](https://mcp-serverlist.com/mcp/fulcra-context-mcp) | @fulcradynamics | [fulcra-context-mcp](https://github.com/fulcradynamics/fulcra-context-mcp) | Python | `uvx fulcra-context-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/fulcra-context-mcp) |
+| [**5dive MCP**](https://mcp-serverlist.com/mcp/5dive-mcp) | @5dive-ai | [5dive-mcp](https://github.com/5dive-ai/5dive-mcp) | Node.js | `npx -y 5dive-ai/5dive-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/5dive-mcp) |
+| [**Sdk MCP**](https://mcp-serverlist.com/mcp/sdk) | @2s-io | [sdk](https://github.com/2s-io/sdk) | Node.js | `npx -y 2s-io/sdk` | [⚡ Config](https://mcp-serverlist.com/mcp/sdk) |
+| [**Toolfunnel MCP**](https://mcp-serverlist.com/mcp/toolfunnel) | @Rendeverance | [toolfunnel](https://github.com/Rendeverance/toolfunnel) | Node.js | `npx -y Rendeverance/toolfunnel` | [⚡ Config](https://mcp-serverlist.com/mcp/toolfunnel) |
 
 ---
 
-### ⚡ Productivity & Workspaces
-| Server Name | Description | Runtime | Quick Install / Run | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| **Slack** | Read channel messages, send updates, and search history. | Node.js | `npx -y @modelcontextprotocol/server-slack` | [View on Web](https://mcp-serverlist.com) |
-| **Google Drive** | Search files and read Google Docs / Sheets content. | Node.js | `npx -y @modelcontextprotocol/server-gdrive` | [View on Web](https://mcp-serverlist.com) |
-| **Notion** | Search databases and read/write workspace pages. | Node.js | `npx -y @notionhq/mcp-server` | [View on Web](https://mcp-serverlist.com) |
-| **Obsidian** | Search and manipulate local Markdown vaults. | Node.js | `npx -y obsidian-mcp` | [View on Web](https://mcp-serverlist.com) |
-| **Linear** | Manage issues, cycles, and team roadmaps. | Node.js | `npx -y @linear/mcp-server` | [View on Web](https://mcp-serverlist.com) |
+### 💬 Communication & CRM (98 Servers)
 
-👉 *[Browse all 35+ Productivity Servers on MCP ServerList](https://mcp-serverlist.com/category/productivity)*
+> Chat integrations, team collaboration, email, customer support, and social networks.  
+> 🔗 *Browse & filter all 98 servers online: [mcp-serverlist.com/category/communication](https://mcp-serverlist.com/category/communication)*
+
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**Dify MCP**](https://mcp-serverlist.com/mcp/dify) | @langgenius | [dify](https://github.com/langgenius/dify) | Node.js | `npx -y @modelcontextprotocol/server-dify` | [⚡ Config](https://mcp-serverlist.com/mcp/dify) |
+| [**Cc Switch MCP**](https://mcp-serverlist.com/mcp/cc-switch) | @farion1231 | [cc-switch](https://github.com/farion1231/cc-switch) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/cc-switch) |
+| [**Lobehub MCP**](https://mcp-serverlist.com/mcp/lobehub) | @lobehub | [lobehub](https://github.com/lobehub/lobehub) | Node.js | `npx -y @modelcontextprotocol/server-lobehub` | [⚡ Config](https://mcp-serverlist.com/mcp/lobehub) |
+| [**Nanobot MCP**](https://mcp-serverlist.com/mcp/nanobot) | @HKUDS | [nanobot](https://github.com/HKUDS/nanobot) | Python | `uvx mcp-server-nanobot` | [⚡ Config](https://mcp-serverlist.com/mcp/nanobot) |
+| [**Cowagent MCP**](https://mcp-serverlist.com/mcp/cowagent) | @zhayujie | [CowAgent](https://github.com/zhayujie/CowAgent) | Python | `uvx mcp-server-cowagent` | [⚡ Config](https://mcp-serverlist.com/mcp/cowagent) |
+| [**Openhuman MCP**](https://mcp-serverlist.com/mcp/openhuman) | @tinyhumansai | [openhuman](https://github.com/tinyhumansai/openhuman) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/openhuman) |
+| [**Qwenpaw MCP**](https://mcp-serverlist.com/mcp/qwenpaw) | @agentscope-ai | [QwenPaw](https://github.com/agentscope-ai/QwenPaw) | Node.js | `npx -y @modelcontextprotocol/server-qwenpaw` | [⚡ Config](https://mcp-serverlist.com/mcp/qwenpaw) |
+| [**Agentscope MCP**](https://mcp-serverlist.com/mcp/agentscope) | @agentscope-ai | [agentscope](https://github.com/agentscope-ai/agentscope) | Python | `uvx mcp-server-agentscope` | [⚡ Config](https://mcp-serverlist.com/mcp/agentscope) |
+| [**Xiaozhi Esp32 MCP**](https://mcp-serverlist.com/mcp/xiaozhi-esp32) | @78 | [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | Node.js | `npx -y @modelcontextprotocol/server-xiaozhi-esp32` | [⚡ Config](https://mcp-serverlist.com/mcp/xiaozhi-esp32) |
+| [**Repomix MCP**](https://mcp-serverlist.com/mcp/repomix) | @yamadashy | [repomix](https://github.com/yamadashy/repomix) | Node.js | `npx -y @modelcontextprotocol/server-repomix` | [⚡ Config](https://mcp-serverlist.com/mcp/repomix) |
+| [**Mastra MCP**](https://mcp-serverlist.com/mcp/mastra) | @mastra-ai | [mastra](https://github.com/mastra-ai/mastra) | Node.js | `npx -y @modelcontextprotocol/server-mastra` | [⚡ Config](https://mcp-serverlist.com/mcp/mastra) |
+| [**Slack Channel & Message MCP**](https://mcp-serverlist.com/mcp/slack) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/slack) | Node.js | `npx -y @modelcontextprotocol/server-slack` | [⚡ Config](https://mcp-serverlist.com/mcp/slack) |
+| [**Stripe Billing & Payments MCP**](https://mcp-serverlist.com/mcp/stripe) | @stripe | [mcp-server-stripe](https://github.com/stripe/mcp-server-stripe) | Node.js | `npx -y @stripe/mcp-server-stripe` | [⚡ Config](https://mcp-serverlist.com/mcp/stripe) |
+| [**Discord Bot & Server Community MCP**](https://mcp-serverlist.com/mcp/discord) | @mcp-community | [mcp-server-discord](https://github.com/mcp-community/mcp-server-discord) | Node.js | `npx -y mcp-server-discord` | [⚡ Config](https://mcp-serverlist.com/mcp/discord) |
+| [**Linear Project & Issue Tracker MCP**](https://mcp-serverlist.com/mcp/linear) | @jerhadf | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | Node.js | `npx -y linear-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/linear) |
+| [**Resend Email Platform MCP**](https://mcp-serverlist.com/mcp/resend) | @resend | [mcp-server-resend](https://github.com/resend/mcp-server-resend) | Node.js | `npx -y @resend/mcp-server-resend` | [⚡ Config](https://mcp-serverlist.com/mcp/resend) |
+| [**Telegram Bot & Broadcast MCP**](https://mcp-serverlist.com/mcp/telegram) | @mcp-extensions | [mcp-server-telegram](https://github.com/mcp-extensions/mcp-server-telegram) | Python | `uvx mcp-server-telegram` | [⚡ Config](https://mcp-serverlist.com/mcp/telegram) |
+| [**Atlassian Jira Project MCP**](https://mcp-serverlist.com/mcp/jira) | @atlassian | [mcp-server-jira](https://github.com/atlassian/mcp-server-jira) | Node.js | `npx -y @atlassian/mcp-server-jira` | [⚡ Config](https://mcp-serverlist.com/mcp/jira) |
+| [**HubSpot CRM & Deals MCP**](https://mcp-serverlist.com/mcp/hubspot) | @hubspot | [mcp-server-hubspot](https://github.com/hubspot/mcp-server-hubspot) | Node.js | `npx -y @hubspot/mcp-server-hubspot` | [⚡ Config](https://mcp-serverlist.com/mcp/hubspot) |
+| [**Twilio SMS & Voice Communications MCP**](https://mcp-serverlist.com/mcp/twilio) | @twilio | [mcp-server-twilio](https://github.com/twilio/mcp-server-twilio) | Python | `uvx mcp-server-twilio` | [⚡ Config](https://mcp-serverlist.com/mcp/twilio) |
+| [**Microsoft Teams Collaboration MCP**](https://mcp-serverlist.com/mcp/microsoft-teams) | @mcp-extensions | [mcp-teams](https://github.com/mcp-extensions/mcp-teams) | Node.js | `npx -y mcp-teams` | [⚡ Config](https://mcp-serverlist.com/mcp/microsoft-teams) |
+| [**Intercom Customer Messaging MCP**](https://mcp-serverlist.com/mcp/intercom) | @intercom | [mcp-server-intercom](https://github.com/intercom/mcp-server-intercom) | Node.js | `npx -y @intercom/mcp-server-intercom` | [⚡ Config](https://mcp-serverlist.com/mcp/intercom) |
+| [**Zendesk Customer Support MCP**](https://mcp-serverlist.com/mcp/zendesk) | @zendesk | [mcp-server-zendesk](https://github.com/zendesk/mcp-server-zendesk) | Node.js | `npx -y @zendesk/mcp-server-zendesk` | [⚡ Config](https://mcp-serverlist.com/mcp/zendesk) |
+| [**Mxprobe MCP**](https://mcp-serverlist.com/mcp/mxprobe) | @andrewchmr | [mxprobe](https://github.com/andrewchmr/mxprobe) | Node.js | `npx -y andrewchmr/mxprobe` | [⚡ Config](https://mcp-serverlist.com/mcp/mxprobe) |
+| [**Mattermost Mcp Host**](https://mcp-serverlist.com/mcp/mattermost-mcp-host) | @jagan-shanmugam | [mattermost-mcp-host](https://github.com/jagan-shanmugam/mattermost-mcp-host) | Python | `uvx mattermost-mcp-host` | [⚡ Config](https://mcp-serverlist.com/mcp/mattermost-mcp-host) |
+| [**Clawdcall MCP**](https://mcp-serverlist.com/mcp/clawdcall-mcp) | @dialgoodian | [clawdcall-mcp](https://github.com/dialgoodian/clawdcall-mcp) | Node.js | `npx -y dialgoodian/clawdcall-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/clawdcall-mcp) |
+| [**Inxmail MCP**](https://mcp-serverlist.com/mcp/inxmail-mcp) | @shahabazdev | [inxmail-mcp](https://github.com/shahabazdev/inxmail-mcp) | Node.js | `npx -y shahabazdev/inxmail-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/inxmail-mcp) |
+| [**Avots MCP**](https://mcp-serverlist.com/mcp/avots-mcp) | @avotsai | [avots-mcp](https://github.com/avotsai/avots-mcp) | Node.js | `npx -y avotsai/avots-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/avots-mcp) |
+| [**Bridgenode MCP**](https://mcp-serverlist.com/mcp/bridgenode-mcp) | @bridgenode-ai | [bridgenode-mcp](https://github.com/bridgenode-ai/bridgenode-mcp) | Node.js | `npx -y bridgenode-ai/bridgenode-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/bridgenode-mcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-1) | @waystation-ai | [mcp](https://github.com/waystation-ai/mcp) | Node.js | `npx -y waystation-ai/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-1) |
+| [**Orcarouter Mcp**](https://mcp-serverlist.com/mcp/orcarouter-mcp-server) | @Continuum-AI-Corp | [orcarouter-mcp-server](https://github.com/Continuum-AI-Corp/orcarouter-mcp-server) | Node.js | `npx -y Continuum-AI-Corp/orcarouter-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/orcarouter-mcp-server) |
+| [**Mailbox MCP**](https://mcp-serverlist.com/mcp/mailbox-mcp) | @arbengine | [mailbox-mcp](https://github.com/arbengine/mailbox-mcp) | Node.js | `npx -y arbengine/mailbox-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mailbox-mcp) |
+| [**Sendgrid Mcp Secure**](https://mcp-serverlist.com/mcp/sendgrid-mcp-secure) | @Choppaaahh | [sendgrid-mcp-secure](https://github.com/Choppaaahh/sendgrid-mcp-secure) | Python | `uvx sendgrid-mcp-secure` | [⚡ Config](https://mcp-serverlist.com/mcp/sendgrid-mcp-secure) |
+| [**Telegram MCP**](https://mcp-serverlist.com/mcp/telegram-mcp-1) | @chigwell | [telegram-mcp](https://github.com/chigwell/telegram-mcp) | Python | `uvx telegram-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/telegram-mcp-1) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-9) | @FastAlertNow | [mcp-server](https://github.com/FastAlertNow/mcp-server) | Node.js | `npx -y FastAlertNow/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-9) |
+| [**Claude Session Relay MCP**](https://mcp-serverlist.com/mcp/claude-session-relay) | @dimitrihilverda | [claude-session-relay](https://github.com/dimitrihilverda/claude-session-relay) | Node.js | `npx -y dimitrihilverda/claude-session-relay` | [⚡ Config](https://mcp-serverlist.com/mcp/claude-session-relay) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-1) | @profullstack | [mcp-server](https://github.com/profullstack/mcp-server) | Node.js | `npx -y profullstack/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-1) |
+| [**Apifold MCP**](https://mcp-serverlist.com/mcp/apifold) | @Work90210 | [APIFold](https://github.com/Work90210/APIFold) | Node.js | `npx -y Work90210/APIFold` | [⚡ Config](https://mcp-serverlist.com/mcp/apifold) |
+| [**Citio MCP**](https://mcp-serverlist.com/mcp/citio) | @lawrencehui | [Citio](https://github.com/lawrencehui/Citio) | Node.js | `npx -y lawrencehui/Citio` | [⚡ Config](https://mcp-serverlist.com/mcp/citio) |
+| [**Markdown To Whatsapp MCP**](https://mcp-serverlist.com/mcp/markdown-to-whatsapp) | @drsound | [markdown-to-whatsapp](https://github.com/drsound/markdown-to-whatsapp) | Node.js | `npx -y drsound/markdown-to-whatsapp` | [⚡ Config](https://mcp-serverlist.com/mcp/markdown-to-whatsapp) |
+| [**Ntfy Me MCP**](https://mcp-serverlist.com/mcp/ntfy-me-mcp) | @gitmotion | [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) | Node.js | `npx -y gitmotion/ntfy-me-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ntfy-me-mcp) |
+| [**Giggal MCP**](https://mcp-serverlist.com/mcp/giggal-mcp) | @giggal-ai | [giggal-mcp](https://github.com/giggal-ai/giggal-mcp) | Node.js | `npx -y giggal-ai/giggal-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/giggal-mcp) |
+| [**Calcom MCP**](https://mcp-serverlist.com/mcp/calcom-mcp) | @Danielpeter-99 | [calcom-mcp](https://github.com/Danielpeter-99/calcom-mcp) | Python | `uvx calcom-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/calcom-mcp) |
+| [**Ictpbx MCP**](https://mcp-serverlist.com/mcp/ictpbx-mcp) | @ictinnovations | [ictpbx-mcp](https://github.com/ictinnovations/ictpbx-mcp) | Node.js | `npx -y ictinnovations/ictpbx-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ictpbx-mcp) |
+| [**Vibekit MCP**](https://mcp-serverlist.com/mcp/vibekit-mcp) | @VibeKit-Bot | [vibekit-mcp](https://github.com/VibeKit-Bot/vibekit-mcp) | Node.js | `npx -y VibeKit-Bot/vibekit-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/vibekit-mcp) |
+| [**Hashnet Mcp Js**](https://mcp-serverlist.com/mcp/hashnet-mcp-js) | @hashgraph-online | [hashnet-mcp-js](https://github.com/hashgraph-online/hashnet-mcp-js) | Node.js | `npx -y hashgraph-online/hashnet-mcp-js` | [⚡ Config](https://mcp-serverlist.com/mcp/hashnet-mcp-js) |
+| [**Agenticmail MCP**](https://mcp-serverlist.com/mcp/agenticmail) | @agenticmail | [agenticmail](https://github.com/agenticmail/agenticmail) | Node.js | `npx -y agenticmail/agenticmail` | [⚡ Config](https://mcp-serverlist.com/mcp/agenticmail) |
+| [**Proximo MCP**](https://mcp-serverlist.com/mcp/proximo) | @john-broadway | [proximo](https://github.com/john-broadway/proximo) | Python | `uvx proximo` | [⚡ Config](https://mcp-serverlist.com/mcp/proximo) |
+| [**Tokenlab Mcp**](https://mcp-serverlist.com/mcp/tokenlab-mcp-server) | @hedging8563 | [tokenlab-mcp-server](https://github.com/hedging8563/tokenlab-mcp-server) | Node.js | `npx -y hedging8563/tokenlab-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/tokenlab-mcp-server) |
+| [**Pbx MCP**](https://mcp-serverlist.com/mcp/pbx-mcp) | @ictinnovations | [pbx-mcp](https://github.com/ictinnovations/pbx-mcp) | Node.js | `npx -y ictinnovations/pbx-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/pbx-mcp) |
+| [**Cloudflare Mcp Pro**](https://mcp-serverlist.com/mcp/cloudflare-mcp-pro) | @helbertparanhos | [cloudflare-mcp-pro](https://github.com/helbertparanhos/cloudflare-mcp-pro) | Node.js | `npx -y helbertparanhos/cloudflare-mcp-pro` | [⚡ Config](https://mcp-serverlist.com/mcp/cloudflare-mcp-pro) |
+| [**Repomapper MCP**](https://mcp-serverlist.com/mcp/repomapper) | @pdavis68 | [RepoMapper](https://github.com/pdavis68/RepoMapper) | Node.js | `npx -y pdavis68/RepoMapper` | [⚡ Config](https://mcp-serverlist.com/mcp/repomapper) |
+| [**Qmailing Mcp**](https://mcp-serverlist.com/mcp/qmailing-mcp-server) | @TheSameAbramovych | [qmailing-mcp-server](https://github.com/TheSameAbramovych/qmailing-mcp-server) | Node.js | `npx -y TheSameAbramovych/qmailing-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/qmailing-mcp-server) |
+| [**Outlook Local MCP**](https://mcp-serverlist.com/mcp/outlook-local-mcp) | @desek | [outlook-local-mcp](https://github.com/desek/outlook-local-mcp) | Node.js | `npx -y desek/outlook-local-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/outlook-local-mcp) |
+| [**Ms Graph MCP**](https://mcp-serverlist.com/mcp/ms-graph-mcp) | @nitin27may | [ms-graph-mcp](https://github.com/nitin27may/ms-graph-mcp) | Python | `uvx ms-graph-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ms-graph-mcp) |
+| [**Telegram MCP**](https://mcp-serverlist.com/mcp/telegram-mcp) | @chaindead | [telegram-mcp](https://github.com/chaindead/telegram-mcp) | Node.js | `npx -y chaindead/telegram-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/telegram-mcp) |
+| [**Doubletick Cli MCP**](https://mcp-serverlist.com/mcp/doubletick-cli) | @cseguinlz | [doubletick-cli](https://github.com/cseguinlz/doubletick-cli) | Node.js | `npx -y cseguinlz/doubletick-cli` | [⚡ Config](https://mcp-serverlist.com/mcp/doubletick-cli) |
+| [**Wisepanel MCP**](https://mcp-serverlist.com/mcp/wisepanel-mcp) | @ikoskela | [wisepanel-mcp](https://github.com/ikoskela/wisepanel-mcp) | Node.js | `npx -y ikoskela/wisepanel-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/wisepanel-mcp) |
+| [**Agoradm MCP**](https://mcp-serverlist.com/mcp/agoradm) | @shichuanqiong | [AgoraDM](https://github.com/shichuanqiong/AgoraDM) | Python | `uvx AgoraDM` | [⚡ Config](https://mcp-serverlist.com/mcp/agoradm) |
+| [**Drop2run Cli MCP**](https://mcp-serverlist.com/mcp/drop2run-cli) | @Drop-to-run | [drop2run-cli](https://github.com/Drop-to-run/drop2run-cli) | Node.js | `npx -y Drop-to-run/drop2run-cli` | [⚡ Config](https://mcp-serverlist.com/mcp/drop2run-cli) |
+| [**Xtapdown MCP**](https://mcp-serverlist.com/mcp/xtapdown-mcp) | @farukkolip | [xtapdown-mcp](https://github.com/farukkolip/xtapdown-mcp) | Node.js | `npx -y farukkolip/xtapdown-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/xtapdown-mcp) |
+| [**Deepseek Mcp**](https://mcp-serverlist.com/mcp/deepseek-mcp-server) | @arikusi | [deepseek-mcp-server](https://github.com/arikusi/deepseek-mcp-server) | Node.js | `npx -y arikusi/deepseek-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/deepseek-mcp-server) |
+| [**Shipmail MCP**](https://mcp-serverlist.com/mcp/shipmail-mcp) | @jcoulaud | [shipmail-mcp](https://github.com/jcoulaud/shipmail-mcp) | Node.js | `npx -y jcoulaud/shipmail-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/shipmail-mcp) |
+| [**Emailmd MCP**](https://mcp-serverlist.com/mcp/emailmd) | @anypost | [emailmd](https://github.com/anypost/emailmd) | Node.js | `npx -y anypost/emailmd` | [⚡ Config](https://mcp-serverlist.com/mcp/emailmd) |
+| [**Telebrief MCP**](https://mcp-serverlist.com/mcp/telebrief) | @belaytzev | [Telebrief](https://github.com/belaytzev/Telebrief) | Python | `uvx Telebrief` | [⚡ Config](https://mcp-serverlist.com/mcp/telebrief) |
+| [**Stacktree MCP**](https://mcp-serverlist.com/mcp/stacktree-mcp) | @stevysmith | [stacktree-mcp](https://github.com/stevysmith/stacktree-mcp) | Node.js | `npx -y stevysmith/stacktree-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/stacktree-mcp) |
+| [**Iletimerkezi Mcp**](https://mcp-serverlist.com/mcp/iletimerkezi-mcp-server) | @iletimerkezi | [iletimerkezi-mcp-server](https://github.com/iletimerkezi/iletimerkezi-mcp-server) | Node.js | `npx -y iletimerkezi/iletimerkezi-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/iletimerkezi-mcp-server) |
+| [**Atomic Mail Agentic MCP**](https://mcp-serverlist.com/mcp/atomic-mail-agentic) | @Atomic-Mail | [atomic-mail-agentic](https://github.com/Atomic-Mail/atomic-mail-agentic) | Node.js | `npx -y Atomic-Mail/atomic-mail-agentic` | [⚡ Config](https://mcp-serverlist.com/mcp/atomic-mail-agentic) |
+| [**Plopino MCP**](https://mcp-serverlist.com/mcp/plopino-mcp) | @plopino | [plopino-mcp](https://github.com/plopino/plopino-mcp) | Node.js | `npx -y plopino/plopino-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/plopino-mcp) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-10) | @virtualsms-io | [mcp-server](https://github.com/virtualsms-io/mcp-server) | Node.js | `npx -y virtualsms-io/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-10) |
+| [**Tsgram MCP**](https://mcp-serverlist.com/mcp/tsgram-mcp) | @areweai | [tsgram-mcp](https://github.com/areweai/tsgram-mcp) | Node.js | `npx -y areweai/tsgram-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/tsgram-mcp) |
+| [**Gambot MCP**](https://mcp-serverlist.com/mcp/gambot-mcp) | @gambot-ai | [gambot-mcp](https://github.com/gambot-ai/gambot-mcp) | Node.js | `npx -y gambot-ai/gambot-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/gambot-mcp) |
+| [**Pingwa Client MCP**](https://mcp-serverlist.com/mcp/pingwa-client) | @grzgrzgrz3 | [pingwa-client](https://github.com/grzgrzgrz3/pingwa-client) | Python | `uvx pingwa-client` | [⚡ Config](https://mcp-serverlist.com/mcp/pingwa-client) |
+| [**Discord Bridge MCP**](https://mcp-serverlist.com/mcp/mcp-discord-bridge) | @iprashantraj | [mcp-discord-bridge](https://github.com/iprashantraj/mcp-discord-bridge) | Node.js | `npx -y iprashantraj/mcp-discord-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-discord-bridge) |
+| [**Joltsms Mcp**](https://mcp-serverlist.com/mcp/joltsms-mcp-server) | @rchanllc | [joltsms-mcp-server](https://github.com/rchanllc/joltsms-mcp-server) | Node.js | `npx -y rchanllc/joltsms-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/joltsms-mcp-server) |
+| [**Telegram Bot MCP**](https://mcp-serverlist.com/mcp/telegram-bot-mcp) | @FantomaSkaRus1 | [telegram-bot-mcp](https://github.com/FantomaSkaRus1/telegram-bot-mcp) | Node.js | `npx -y FantomaSkaRus1/telegram-bot-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/telegram-bot-mcp) |
+| [**Infomaniak Mcp Agent**](https://mcp-serverlist.com/mcp/infomaniak-mcp-agent) | @Mogacode-ma | [infomaniak-mcp-agent](https://github.com/Mogacode-ma/infomaniak-mcp-agent) | Node.js | `npx -y Mogacode-ma/infomaniak-mcp-agent` | [⚡ Config](https://mcp-serverlist.com/mcp/infomaniak-mcp-agent) |
+| [**Callcenter.js MCP**](https://mcp-serverlist.com/mcp/callcenter-js-mcp) | @gerkensm | [callcenter.js-mcp](https://github.com/gerkensm/callcenter.js-mcp) | Node.js | `npx -y gerkensm/callcenter.js-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/callcenter-js-mcp) |
+| [**Teams MCP**](https://mcp-serverlist.com/mcp/mcp-teams-server) | @InditexTech | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | Python | `uvx mcp-teams-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-teams-server) |
+| [**Wechat Fastbridge MCP**](https://mcp-serverlist.com/mcp/wechat-fastbridge) | @huj28-creator | [wechat-fastbridge](https://github.com/huj28-creator/wechat-fastbridge) | Node.js | `npx -y huj28-creator/wechat-fastbridge` | [⚡ Config](https://mcp-serverlist.com/mcp/wechat-fastbridge) |
+| [**Inbox Zero MCP**](https://mcp-serverlist.com/mcp/inbox-zero) | @elie222 | [inbox-zero](https://github.com/elie222/inbox-zero) | Node.js | `npx -y elie222/inbox-zero` | [⚡ Config](https://mcp-serverlist.com/mcp/inbox-zero) |
+| [**Gliana MCP**](https://mcp-serverlist.com/mcp/gliana-mcp) | @Gliana-Labs | [gliana-mcp](https://github.com/Gliana-Labs/gliana-mcp) | Node.js | `npx -y Gliana-Labs/gliana-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/gliana-mcp) |
+| [**Voxie Ai Directory MCP**](https://mcp-serverlist.com/mcp/voxie-ai-directory-mcp) | @sonnyflylock | [voxie-ai-directory-mcp](https://github.com/sonnyflylock/voxie-ai-directory-mcp) | Node.js | `npx -y sonnyflylock/voxie-ai-directory-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/voxie-ai-directory-mcp) |
+| [**Wecombot MCP**](https://mcp-serverlist.com/mcp/mcp-wecombot-server-git) | @gotoolkits | [mcp-wecombot-server.git](https://github.com/gotoolkits/mcp-wecombot-server) | Node.js | `npx -y gotoolkits/mcp-wecombot-server.git` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-wecombot-server-git) |
+| [**Resend Email MCP**](https://mcp-serverlist.com/mcp/resend-email-mcp) | @helbertparanhos | [resend-email-mcp](https://github.com/helbertparanhos/resend-email-mcp) | Node.js | `npx -y helbertparanhos/resend-email-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/resend-email-mcp) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-16) | @infobip | [mcp](https://github.com/infobip/mcp) | Node.js | `npx -y infobip/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-16) |
+| [**Content Distribution MCP**](https://mcp-serverlist.com/mcp/content-distribution-mcp) | @AutomateLab-tech | [content-distribution-mcp](https://github.com/AutomateLab-tech/content-distribution-mcp) | Node.js | `npx -y AutomateLab-tech/content-distribution-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/content-distribution-mcp) |
+| [**Mundane MCP**](https://mcp-serverlist.com/mcp/mundane-mcp) | @sttruji | [mundane-mcp](https://github.com/sttruji/mundane-mcp) | Python | `uvx mundane-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mundane-mcp) |
+| [**Oz Mcp**](https://mcp-serverlist.com/mcp/ozbridge) | @sena-labs | [OzBridge](https://github.com/sena-labs/OzBridge) | Node.js | `npx -y sena-labs/OzBridge` | [⚡ Config](https://mcp-serverlist.com/mcp/ozbridge) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-15) | @getpoststack | [mcp](https://github.com/getpoststack/mcp) | Node.js | `npx -y getpoststack/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-15) |
+| [**Ictbroadcast MCP**](https://mcp-serverlist.com/mcp/ictbroadcast-mcp) | @ictinnovations | [ictbroadcast-mcp](https://github.com/ictinnovations/ictbroadcast-mcp) | Node.js | `npx -y ictinnovations/ictbroadcast-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ictbroadcast-mcp) |
+| [**Mattermost MCP**](https://mcp-serverlist.com/mcp/mattermost-mcp) | @conarti | [mattermost-mcp](https://github.com/conarti/mattermost-mcp) | Node.js | `npx -y conarti/mattermost-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mattermost-mcp) |
+| [**Agentmail MCP**](https://mcp-serverlist.com/mcp/agentmail-mcp) | @agentmail-to | [agentmail-mcp](https://github.com/agentmail-to/agentmail-mcp) | Node.js | `npx -y agentmail-to/agentmail-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/agentmail-mcp) |
+| [**Mac Messages Mcp**](https://mcp-serverlist.com/mcp/mac-messages-mcp) | @carterlasalle | [mac_messages_mcp](https://github.com/carterlasalle/mac_messages_mcp) | Node.js | `npx -y carterlasalle/mac_messages_mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mac-messages-mcp) |
+| [**Solmail MCP**](https://mcp-serverlist.com/mcp/solmail-mcp) | @ExpertVagabond | [solmail-mcp](https://github.com/ExpertVagabond/solmail-mcp) | Node.js | `npx -y ExpertVagabond/solmail-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/solmail-mcp) |
+| [**Chatspatial MCP**](https://mcp-serverlist.com/mcp/chatspatial) | @cafferychen777 | [ChatSpatial](https://github.com/cafferychen777/ChatSpatial) | Python | `uvx ChatSpatial` | [⚡ Config](https://mcp-serverlist.com/mcp/chatspatial) |
+| [**Ox MCP**](https://mcp-serverlist.com/mcp/ox-mcp) | @Rheopyrin | [ox-mcp](https://github.com/Rheopyrin/ox-mcp) | Node.js | `npx -y Rheopyrin/ox-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ox-mcp) |
+| [**Multi MCP**](https://mcp-serverlist.com/mcp/multi-mcp) | @religa | [multi_mcp](https://github.com/religa/multi_mcp) | Python | `uvx multi_mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/multi-mcp) |
 
 ---
 
-### 🤖 AI Models, Reasoning & Memory
-| Server Name | Description | Runtime | Quick Install / Run | Details |
-| :--- | :--- | :--- | :--- | :--- |
-| **Sequential Thinking** | Structured dynamic step-by-step problem-solving tool. | Node.js | `npx -y @modelcontextprotocol/server-sequential-thinking` | [View on Web](https://mcp-serverlist.com) |
-| **Memory Graph** | Open-source persistent knowledge graph memory for AI agents. | Node.js | `npx -y @modelcontextprotocol/server-memory` | [View on Web](https://mcp-serverlist.com) |
-| **Ollama** | Local LLM inference and model interaction via MCP. | Python | `uvx mcp-server-ollama` | [View on Web](https://mcp-serverlist.com) |
+### 🧠 AI Models, Memory & Data (109 Servers)
+
+> Local and cloud LLM connectors, reasoning engines, RAG pipelines, and agent memory.  
+> 🔗 *Browse & filter all 109 servers online: [mcp-serverlist.com/category/ai-data](https://mcp-serverlist.com/category/ai-data)*
+
+| MCP Server | Author (@handle) | GitHub Repo | Runtime | Quick Install / Run | 1-Click Config |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [**Open Webui MCP**](https://mcp-serverlist.com/mcp/open-webui) | @open-webui | [open-webui](https://github.com/open-webui/open-webui) | Python | `uvx mcp-server-open-webui` | [⚡ Config](https://mcp-serverlist.com/mcp/open-webui) |
+| [**Awesome Mcp Servers**](https://mcp-serverlist.com/mcp/awesome-mcp-servers) | @punkpeye | [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | Node.js | `npx -y @modelcontextprotocol/server-awesome-mcp-servers` | [⚡ Config](https://mcp-serverlist.com/mcp/awesome-mcp-servers) |
+| [**Worldmonitor MCP**](https://mcp-serverlist.com/mcp/worldmonitor) | @koala73 | [worldmonitor](https://github.com/koala73/worldmonitor) | Node.js | `npx -y @modelcontextprotocol/server-worldmonitor` | [⚡ Config](https://mcp-serverlist.com/mcp/worldmonitor) |
+| [**Headroom MCP**](https://mcp-serverlist.com/mcp/headroom) | @headroomlabs-ai | [headroom](https://github.com/headroomlabs-ai/headroom) | Python | `uvx mcp-server-headroom` | [⚡ Config](https://mcp-serverlist.com/mcp/headroom) |
+| [**Omniroute MCP**](https://mcp-serverlist.com/mcp/omniroute) | @diegosouzapw | [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | Node.js | `npx -y @modelcontextprotocol/server-omniroute` | [⚡ Config](https://mcp-serverlist.com/mcp/omniroute) |
+| [**Ai Engineering From Scratch MCP**](https://mcp-serverlist.com/mcp/ai-engineering-from-scratch) | @rohitg00 | [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | Python | `uvx mcp-server-ai-engineering-from-scratch` | [⚡ Config](https://mcp-serverlist.com/mcp/ai-engineering-from-scratch) |
+| [**Goose MCP**](https://mcp-serverlist.com/mcp/goose) | @aaif-goose | [goose](https://github.com/aaif-goose/goose) | Rust | `cargo run --release` | [⚡ Config](https://mcp-serverlist.com/mcp/goose) |
+| [**Localai MCP**](https://mcp-serverlist.com/mcp/localai) | @mudler | [LocalAI](https://github.com/mudler/LocalAI) | Go | `go run github.com/mudler/LocalAI` | [⚡ Config](https://mcp-serverlist.com/mcp/localai) |
+| [**Jeecgboot MCP**](https://mcp-serverlist.com/mcp/jeecgboot) | @jeecgboot | [JeecgBoot](https://github.com/jeecgboot/JeecgBoot) | Java | `java -jar jeecgboot-mcp.jar` | [⚡ Config](https://mcp-serverlist.com/mcp/jeecgboot) |
+| [**Agents MCP**](https://mcp-serverlist.com/mcp/agents) | @wshobson | [agents](https://github.com/wshobson/agents) | Python | `uvx mcp-server-agents` | [⚡ Config](https://mcp-serverlist.com/mcp/agents) |
+| [**Mindshub MCP**](https://mcp-serverlist.com/mcp/mindshub) | @mindsdb | [mindshub](https://github.com/mindsdb/mindshub) | Node.js | `npx -y @modelcontextprotocol/server-mindshub` | [⚡ Config](https://mcp-serverlist.com/mcp/mindshub) |
+| [**Ai Engineering Hub MCP**](https://mcp-serverlist.com/mcp/ai-engineering-hub) | @patchy631 | [ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | Node.js | `npx -y @modelcontextprotocol/server-ai-engineering-hub` | [⚡ Config](https://mcp-serverlist.com/mcp/ai-engineering-hub) |
+| [**Claude Plugins Official MCP**](https://mcp-serverlist.com/mcp/claude-plugins-official) | @anthropics | [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Python | `uvx mcp-server-claude-plugins-official` | [⚡ Config](https://mcp-serverlist.com/mcp/claude-plugins-official) |
+| [**Vibe Trading MCP**](https://mcp-serverlist.com/mcp/vibe-trading) | @HKUDS | [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) | Python | `uvx mcp-server-vibe-trading` | [⚡ Config](https://mcp-serverlist.com/mcp/vibe-trading) |
+| [**For Blender MCP**](https://mcp-serverlist.com/mcp/mcp-for-blender) | @ahujasid | [mcp-for-blender](https://github.com/ahujasid/mcp-for-blender) | Python | `uvx mcp-server-mcp-for-blender` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-for-blender) |
+| [**Fastmcp**](https://mcp-serverlist.com/mcp/fastmcp) | @PrefectHQ | [fastmcp](https://github.com/PrefectHQ/fastmcp) | Python | `uvx mcp-server-fastmcp` | [⚡ Config](https://mcp-serverlist.com/mcp/fastmcp) |
+| [**Kratos MCP**](https://mcp-serverlist.com/mcp/kratos) | @go-kratos | [kratos](https://github.com/go-kratos/kratos) | Go | `go run github.com/go-kratos/kratos` | [⚡ Config](https://mcp-serverlist.com/mcp/kratos) |
+| [**Gin Vue Admin MCP**](https://mcp-serverlist.com/mcp/gin-vue-admin) | @flipped-aurora | [gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin) | Go | `go run github.com/flipped-aurora/gin-vue-admin` | [⚡ Config](https://mcp-serverlist.com/mcp/gin-vue-admin) |
+| [**Python Sdk MCP**](https://mcp-serverlist.com/mcp/python-sdk) | @modelcontextprotocol | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) | Python | `uvx mcp-server-python-sdk` | [⚡ Config](https://mcp-serverlist.com/mcp/python-sdk) |
+| [**Genai Agents MCP**](https://mcp-serverlist.com/mcp/genai-agents) | @NirDiamant | [GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) | Node.js | `npx -y @modelcontextprotocol/server-genai-agents` | [⚡ Config](https://mcp-serverlist.com/mcp/genai-agents) |
+| [**Go Micro MCP**](https://mcp-serverlist.com/mcp/go-micro) | @micro | [go-micro](https://github.com/micro/go-micro) | Go | `go run github.com/micro/go-micro` | [⚡ Config](https://mcp-serverlist.com/mcp/go-micro) |
+| [**Awesome Ai Engineering MCP**](https://mcp-serverlist.com/mcp/awesome-ai-engineering) | @dipakkr | [awesome-ai-engineering](https://github.com/dipakkr/awesome-ai-engineering) | Node.js | `npx -y @modelcontextprotocol/server-awesome-ai-engineering` | [⚡ Config](https://mcp-serverlist.com/mcp/awesome-ai-engineering) |
+| [**Funasr MCP**](https://mcp-serverlist.com/mcp/funasr) | @modelscope | [FunASR](https://github.com/modelscope/FunASR) | Python | `uvx mcp-server-funasr` | [⚡ Config](https://mcp-serverlist.com/mcp/funasr) |
+| [**Hugging Face Hub & Datasets MCP**](https://mcp-serverlist.com/mcp/huggingface) | @modelcontextprotocol | [servers](https://github.com/modelcontextprotocol/servers/tree/main/src/huggingface) | Python | `uvx mcp-server-huggingface` | [⚡ Config](https://mcp-serverlist.com/mcp/huggingface) |
+| [**Ollama Local LLMs MCP**](https://mcp-serverlist.com/mcp/ollama) | @mcp-community | [mcp-server-ollama](https://github.com/mcp-community/mcp-server-ollama) | Node.js | `npx -y mcp-server-ollama` | [⚡ Config](https://mcp-serverlist.com/mcp/ollama) |
+| [**Mem0 Intelligent Memory Layer MCP**](https://mcp-serverlist.com/mcp/mem0) | @mem0ai | [mem0-mcp](https://github.com/mem0ai/mem0-mcp) | Python | `uvx mem0-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mem0) |
+| [**LangChain Multi-Tool Gateway MCP**](https://mcp-serverlist.com/mcp/langchain-tools) | @langchain-ai | [mcp-server-langchain](https://github.com/langchain-ai/mcp-server-langchain) | Python | `uvx mcp-server-langchain` | [⚡ Config](https://mcp-serverlist.com/mcp/langchain-tools) |
+| [**Chroma DB Vector Store MCP**](https://mcp-serverlist.com/mcp/chroma) | @chroma-core | [chroma-mcp](https://github.com/chroma-core/chroma-mcp) | Python | `uvx chroma-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/chroma) |
+| [**Milvus High-Performance Vector DB MCP**](https://mcp-serverlist.com/mcp/milvus) | @milvus-io | [mcp-server-milvus](https://github.com/milvus-io/mcp-server-milvus) | Python | `uvx mcp-server-milvus` | [⚡ Config](https://mcp-serverlist.com/mcp/milvus) |
+| [**Weaviate Vector & Hybrid Search MCP**](https://mcp-serverlist.com/mcp/weaviate) | @weaviate | [weaviate-mcp](https://github.com/weaviate/weaviate-mcp) | Python | `uvx weaviate-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/weaviate) |
+| [**Replicate Cloud Model Runner MCP**](https://mcp-serverlist.com/mcp/replicate) | @replicate | [mcp-server-replicate](https://github.com/replicate/mcp-server-replicate) | Node.js | `npx -y @replicate/mcp-server-replicate` | [⚡ Config](https://mcp-serverlist.com/mcp/replicate) |
+| [**Qdrant Vector Engine MCP**](https://mcp-serverlist.com/mcp/qdrant) | @qdrant | [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | Python | `uvx mcp-server-qdrant` | [⚡ Config](https://mcp-serverlist.com/mcp/qdrant) |
+| [**Pinecone Vector Database MCP**](https://mcp-serverlist.com/mcp/pinecone) | @pinecone-io | [mcp-server-pinecone](https://github.com/pinecone-io/mcp-server-pinecone) | Python | `uvx mcp-server-pinecone` | [⚡ Config](https://mcp-serverlist.com/mcp/pinecone) |
+| [**Cohere Rerank & Embeddings MCP**](https://mcp-serverlist.com/mcp/cohere) | @cohere-ai | [mcp-server-cohere](https://github.com/cohere-ai/mcp-server-cohere) | Python | `uvx mcp-server-cohere` | [⚡ Config](https://mcp-serverlist.com/mcp/cohere) |
+| [**Agoragentic Integrations MCP**](https://mcp-serverlist.com/mcp/agoragentic-integrations) | @rhein1 | [agoragentic-integrations](https://github.com/rhein1/agoragentic-integrations) | Node.js | `npx -y rhein1/agoragentic-integrations` | [⚡ Config](https://mcp-serverlist.com/mcp/agoragentic-integrations) |
+| [**Agentrender MCP**](https://mcp-serverlist.com/mcp/agentrender-mcp) | @corbinvachal48 | [agentrender-mcp](https://github.com/corbinvachal48/agentrender-mcp) | Python | `uvx agentrender-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/agentrender-mcp) |
+| [**Magg MCP**](https://mcp-serverlist.com/mcp/magg) | @sitbon | [magg](https://github.com/sitbon/magg) | Python | `uvx magg` | [⚡ Config](https://mcp-serverlist.com/mcp/magg) |
+| [**Tokenburnrate MCP**](https://mcp-serverlist.com/mcp/tokenburnrate) | @nikhilnt1234 | [TokenBurnRate](https://github.com/nikhilnt1234/TokenBurnRate) | Node.js | `npx -y nikhilnt1234/TokenBurnRate` | [⚡ Config](https://mcp-serverlist.com/mcp/tokenburnrate) |
+| [**Network Ai MCP**](https://mcp-serverlist.com/mcp/network-ai) | @Jovancoding | [Network-AI](https://github.com/Jovancoding/Network-AI) | Node.js | `npx -y Jovancoding/Network-AI` | [⚡ Config](https://mcp-serverlist.com/mcp/network-ai) |
+| [**Elisym MCP**](https://mcp-serverlist.com/mcp/elisym) | @elisymlabs | [elisym](https://github.com/elisymlabs/elisym) | Node.js | `npx -y elisymlabs/elisym` | [⚡ Config](https://mcp-serverlist.com/mcp/elisym) |
+| [**Glyphdna MCP**](https://mcp-serverlist.com/mcp/glyphdna-mcp) | @TheRealDalaiLama | [glyphdna-mcp](https://github.com/TheRealDalaiLama/glyphdna-mcp) | Python | `uvx glyphdna-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/glyphdna-mcp) |
+| [**Forcedream MCP**](https://mcp-serverlist.com/mcp/forcedream-mcp) | @forcedreamai | [forcedream-mcp](https://github.com/forcedreamai/forcedream-mcp) | Node.js | `npx -y forcedreamai/forcedream-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/forcedream-mcp) |
+| [**Ddg Agent Payable Services MCP**](https://mcp-serverlist.com/mcp/ddg-agent-payable-services) | @daedalusdevelopmentgroup | [ddg-agent-payable-services](https://github.com/daedalusdevelopmentgroup/ddg-agent-payable-services) | Python | `uvx ddg-agent-payable-services` | [⚡ Config](https://mcp-serverlist.com/mcp/ddg-agent-payable-services) |
+| [**Sitelauncher Mcp**](https://mcp-serverlist.com/mcp/sitelauncher-mcp-server) | @trackerfitness729-jpg | [sitelauncher-mcp-server](https://github.com/trackerfitness729-jpg/sitelauncher-mcp-server) | Node.js | `npx -y trackerfitness729-jpg/sitelauncher-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/sitelauncher-mcp-server) |
+| [**Agentforge MCP**](https://mcp-serverlist.com/mcp/agentforge) | @doggychip | [agentforge](https://github.com/doggychip/agentforge) | Node.js | `npx -y doggychip/agentforge` | [⚡ Config](https://mcp-serverlist.com/mcp/agentforge) |
+| [**Ateam MCP**](https://mcp-serverlist.com/mcp/ateam-mcp) | @ariekogan | [ateam-mcp](https://github.com/ariekogan/ateam-mcp) | Node.js | `npx -y ariekogan/ateam-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/ateam-mcp) |
+| [**Mcptoon**](https://mcp-serverlist.com/mcp/mcptoon) | @activeing123 | [mcptoon](https://github.com/activeing123/mcptoon) | Python | `uvx mcptoon` | [⚡ Config](https://mcp-serverlist.com/mcp/mcptoon) |
+| [**Container Use MCP**](https://mcp-serverlist.com/mcp/container-use) | @dagger | [container-use](https://github.com/dagger/container-use) | Node.js | `npx -y dagger/container-use` | [⚡ Config](https://mcp-serverlist.com/mcp/container-use) |
+| [**Chap MCP**](https://mcp-serverlist.com/mcp/chap) | @BrightbeamAI | [chap](https://github.com/BrightbeamAI/chap) | Node.js | `npx -y BrightbeamAI/chap` | [⚡ Config](https://mcp-serverlist.com/mcp/chap) |
+| [**Js MCP**](https://mcp-serverlist.com/mcp/mcp-server-js) | @yepcode | [mcp-server-js](https://github.com/yepcode/mcp-server-js) | Node.js | `npx -y yepcode/mcp-server-js` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-js) |
+| [**Frantic MCP**](https://mcp-serverlist.com/mcp/frantic-mcp) | @gofrantic | [frantic-mcp](https://github.com/gofrantic/frantic-mcp) | Node.js | `npx -y gofrantic/frantic-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/frantic-mcp) |
+| [**Proposalcraft MCP**](https://mcp-serverlist.com/mcp/proposalcraft) | @jabbawocky | [proposalcraft](https://github.com/jabbawocky/proposalcraft) | Node.js | `npx -y jabbawocky/proposalcraft` | [⚡ Config](https://mcp-serverlist.com/mcp/proposalcraft) |
+| [**Clirank Mcp**](https://mcp-serverlist.com/mcp/clirank-mcp-server) | @alexanderclapp | [clirank-mcp-server](https://github.com/alexanderclapp/clirank-mcp-server) | Node.js | `npx -y alexanderclapp/clirank-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/clirank-mcp-server) |
+| [**Toolport MCP**](https://mcp-serverlist.com/mcp/toolport) | @tsouth89 | [toolport](https://github.com/tsouth89/toolport) | Rust | `npx -y tsouth89/toolport` | [⚡ Config](https://mcp-serverlist.com/mcp/toolport) |
+| [**Neurolink MCP**](https://mcp-serverlist.com/mcp/neurolink) | @juspay | [neurolink](https://github.com/juspay/neurolink) | Node.js | `npx -y juspay/neurolink` | [⚡ Config](https://mcp-serverlist.com/mcp/neurolink) |
+| [**K8s Aiops MCP**](https://mcp-serverlist.com/mcp/k8s-aiops) | @AIops-tools | [K8s-AIops](https://github.com/AIops-tools/K8s-AIops) | Python | `uvx K8s-AIops` | [⚡ Config](https://mcp-serverlist.com/mcp/k8s-aiops) |
+| [**Musajala MCP**](https://mcp-serverlist.com/mcp/musajala-mcp) | @musajala | [musajala-mcp](https://github.com/musajala/musajala-mcp) | Node.js | `npx -y musajala/musajala-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/musajala-mcp) |
+| [**Portveil MCP**](https://mcp-serverlist.com/mcp/portveil-mcp) | @roybogs | [portveil-mcp](https://github.com/roybogs/portveil-mcp) | Node.js | `npx -y roybogs/portveil-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/portveil-mcp) |
+| [**Llm Prices Cn MCP**](https://mcp-serverlist.com/mcp/llm-prices-cn) | @szp2005 | [llm-prices-cn](https://github.com/szp2005/llm-prices-cn) | Python | `uvx llm-prices-cn` | [⚡ Config](https://mcp-serverlist.com/mcp/llm-prices-cn) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-3) | @decision-anchor | [mcp-server](https://github.com/decision-anchor/mcp-server) | Node.js | `npx -y decision-anchor/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-3) |
+| [**Forage MCP**](https://mcp-serverlist.com/mcp/forage) | @isaac-levine | [forage](https://github.com/isaac-levine/forage) | Node.js | `npx -y isaac-levine/forage` | [⚡ Config](https://mcp-serverlist.com/mcp/forage) |
+| [**Qiniu Mcp**](https://mcp-serverlist.com/mcp/qiniu-mcp-server) | @qiniu | [qiniu-mcp-server](https://github.com/qiniu/qiniu-mcp-server) | Python | `uvx qiniu-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/qiniu-mcp-server) |
+| [**Crompton Network MCP**](https://mcp-serverlist.com/mcp/crompton-network) | @clanker-records | [crompton-network](https://github.com/clanker-records/crompton-network) | Node.js | `npx -y clanker-records/crompton-network` | [⚡ Config](https://mcp-serverlist.com/mcp/crompton-network) |
+| [**Edict MCP**](https://mcp-serverlist.com/mcp/edict) | @Sowiedu | [Edict](https://github.com/Sowiedu/Edict) | Node.js | `npx -y Sowiedu/Edict` | [⚡ Config](https://mcp-serverlist.com/mcp/edict) |
+| [**Prolog Reasoner MCP**](https://mcp-serverlist.com/mcp/prolog-reasoner) | @rikarazome | [prolog-reasoner](https://github.com/rikarazome/prolog-reasoner) | Python | `uvx prolog-reasoner` | [⚡ Config](https://mcp-serverlist.com/mcp/prolog-reasoner) |
+| [**Minia2a MCP**](https://mcp-serverlist.com/mcp/minia2a-mcp) | @minia2auk | [minia2a-mcp](https://github.com/minia2auk/minia2a-mcp) | Node.js | `npx -y minia2auk/minia2a-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/minia2a-mcp) |
+| [**Pagemap MCP**](https://mcp-serverlist.com/mcp/retio-pagemap) | @Retio-ai | [Retio-pagemap](https://github.com/Retio-ai/Retio-pagemap) | Python | `uvx Retio-pagemap` | [⚡ Config](https://mcp-serverlist.com/mcp/retio-pagemap) |
+| [**Agent Deploy Dashboard MCP**](https://mcp-serverlist.com/mcp/agent-deploy-dashboard-mcp) | @aparajithn | [agent-deploy-dashboard-mcp](https://github.com/aparajithn/agent-deploy-dashboard-mcp) | Python | `uvx agent-deploy-dashboard-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/agent-deploy-dashboard-mcp) |
+| [**Relayer MCP**](https://mcp-serverlist.com/mcp/relayer-mcp) | @xns-cloud | [relayer-mcp](https://github.com/xns-cloud/relayer-mcp) | Node.js | `npx -y xns-cloud/relayer-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/relayer-mcp) |
+| [**Mesh Connector MCP**](https://mcp-serverlist.com/mcp/mesh-connector) | @RightOnPar-LLC | [mesh-connector](https://github.com/RightOnPar-LLC/mesh-connector) | Node.js | `npx -y RightOnPar-LLC/mesh-connector` | [⚡ Config](https://mcp-serverlist.com/mcp/mesh-connector) |
+| [**Findagent MCP**](https://mcp-serverlist.com/mcp/findagent-mcp) | @team886 | [findagent-mcp](https://github.com/team886/findagent-mcp) | Node.js | `npx -y team886/findagent-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/findagent-mcp) |
+| [**Agent47 MCP**](https://mcp-serverlist.com/mcp/agent47) | @espadaw | [Agent47](https://github.com/espadaw/Agent47) | Node.js | `npx -y espadaw/Agent47` | [⚡ Config](https://mcp-serverlist.com/mcp/agent47) |
+| [**B2 MCP**](https://mcp-serverlist.com/mcp/b2-mcp) | @backblaze-labs | [b2-mcp](https://github.com/backblaze-labs/b2-mcp) | Node.js | `npx -y backblaze-labs/b2-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/b2-mcp) |
+| [**Nutanix Aiops MCP**](https://mcp-serverlist.com/mcp/nutanix-aiops) | @AIops-tools | [Nutanix-AIops](https://github.com/AIops-tools/Nutanix-AIops) | Python | `uvx Nutanix-AIops` | [⚡ Config](https://mcp-serverlist.com/mcp/nutanix-aiops) |
+| [**Aiagentmarket MCP**](https://mcp-serverlist.com/mcp/aiagentmarket) | @kaxiyu | [aiagentmarket](https://github.com/kaxiyu/aiagentmarket) | Node.js | `npx -y kaxiyu/aiagentmarket` | [⚡ Config](https://mcp-serverlist.com/mcp/aiagentmarket) |
+| [**Hicortex MCP**](https://mcp-serverlist.com/mcp/hicortex) | @gamaze-labs | [hicortex](https://github.com/gamaze-labs/hicortex) | Node.js | `npx -y gamaze-labs/hicortex` | [⚡ Config](https://mcp-serverlist.com/mcp/hicortex) |
+| [**Blazingcdn MCP**](https://mcp-serverlist.com/mcp/blazingcdn-mcp) | @BlazingCDN | [BlazingCDN-MCP](https://github.com/BlazingCDN/BlazingCDN-MCP) | Node.js | `npx -y BlazingCDN/BlazingCDN-MCP` | [⚡ Config](https://mcp-serverlist.com/mcp/blazingcdn-mcp) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server) | @gpu-bridge | [mcp-server](https://github.com/gpu-bridge/mcp-server) | Node.js | `npx -y gpu-bridge/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server) |
+| [**Hostodo MCP**](https://mcp-serverlist.com/mcp/hostodo-mcp) | @hostodo | [hostodo-mcp](https://github.com/hostodo/hostodo-mcp) | Node.js | `npx -y hostodo/hostodo-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/hostodo-mcp) |
+| [**Swarmwage MCP**](https://mcp-serverlist.com/mcp/swarmwage) | @Swarmwage | [swarmwage](https://github.com/Swarmwage/swarmwage) | Node.js | `npx -y Swarmwage/swarmwage` | [⚡ Config](https://mcp-serverlist.com/mcp/swarmwage) |
+| [**Motionlint MCP**](https://mcp-serverlist.com/mcp/motionlint) | @bobaba99 | [motionlint](https://github.com/bobaba99/motionlint) | Node.js | `npx -y bobaba99/motionlint` | [⚡ Config](https://mcp-serverlist.com/mcp/motionlint) |
+| [**Vmware Storage MCP**](https://mcp-serverlist.com/mcp/vmware-storage) | @zw008 | [VMware-Storage](https://github.com/zw008/VMware-Storage) | Python | `uvx VMware-Storage` | [⚡ Config](https://mcp-serverlist.com/mcp/vmware-storage) |
+| [**X402station MCP**](https://mcp-serverlist.com/mcp/x402station-mcp) | @sF1nX | [x402station-mcp](https://github.com/sF1nX/x402station-mcp) | Node.js | `npx -y sF1nX/x402station-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/x402station-mcp) |
+| [**Ipfs MCP**](https://mcp-serverlist.com/mcp/mcp-ipfs) | @alexbakers | [mcp-ipfs](https://github.com/alexbakers/mcp-ipfs) | Node.js | `npx -y alexbakers/mcp-ipfs` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-ipfs) |
+| [**Openpouch MCP**](https://mcp-serverlist.com/mcp/openpouch) | @openpouch | [openpouch](https://github.com/openpouch/openpouch) | Node.js | `npx -y openpouch/openpouch` | [⚡ Config](https://mcp-serverlist.com/mcp/openpouch) |
+| [**Aiskillstore MCP**](https://mcp-serverlist.com/mcp/aiskillstore) | @garasegae | [aiskillstore](https://github.com/garasegae/aiskillstore) | Node.js | `npx -y garasegae/aiskillstore` | [⚡ Config](https://mcp-serverlist.com/mcp/aiskillstore) |
+| [**Agent MCP**](https://mcp-serverlist.com/mcp/agent) | @1mcp-app | [agent](https://github.com/1mcp-app/agent) | Node.js | `npx -y 1mcp-app/agent` | [⚡ Config](https://mcp-serverlist.com/mcp/agent) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-4) | @tribeunal | [mcp-server](https://github.com/tribeunal/mcp-server) | Node.js | `npx -y tribeunal/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-4) |
+| [**Market Pulse MCP**](https://mcp-serverlist.com/mcp/market-pulse-mcp) | @t3ratech | [market-pulse-mcp](https://github.com/t3ratech/market-pulse-mcp) | Node.js | `npx -y t3ratech/market-pulse-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/market-pulse-mcp) |
+| [**Studiomcphub**](https://mcp-serverlist.com/mcp/studiomcphub) | @codex-curator | [studiomcphub](https://github.com/codex-curator/studiomcphub) | Python | `uvx studiomcphub` | [⚡ Config](https://mcp-serverlist.com/mcp/studiomcphub) |
+| [**Agentnet MCP**](https://mcp-serverlist.com/mcp/agentnet) | @oxgeneral | [agentnet](https://github.com/oxgeneral/agentnet) | Python | `uvx agentnet` | [⚡ Config](https://mcp-serverlist.com/mcp/agentnet) |
+| [**Aisix MCP**](https://mcp-serverlist.com/mcp/aisix) | @api7 | [aisix](https://github.com/api7/aisix) | Rust | `npx -y api7/aisix` | [⚡ Config](https://mcp-serverlist.com/mcp/aisix) |
+| [**Mcp**](https://mcp-serverlist.com/mcp/mcp-10) | @luno-cms | [mcp](https://github.com/luno-cms/mcp) | Node.js | `npx -y luno-cms/mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-10) |
+| [**Server MCP**](https://mcp-serverlist.com/mcp/mcp-server-2) | @cogdepot | [mcp-server](https://github.com/cogdepot/mcp-server) | Node.js | `npx -y cogdepot/mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-2) |
+| [**Reachpad MCP**](https://mcp-serverlist.com/mcp/reachpad-mcp) | @Reachpad | [reachpad-mcp](https://github.com/Reachpad/reachpad-mcp) | Node.js | `npx -y Reachpad/reachpad-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/reachpad-mcp) |
+| [**Liquid MCP**](https://mcp-serverlist.com/mcp/liquid) | @ertad-family | [liquid](https://github.com/ertad-family/liquid) | Python | `uvx liquid` | [⚡ Config](https://mcp-serverlist.com/mcp/liquid) |
+| [**Cortex MCP**](https://mcp-serverlist.com/mcp/cortex) | @gzoonet | [cortex](https://github.com/gzoonet/cortex) | Node.js | `npx -y gzoonet/cortex` | [⚡ Config](https://mcp-serverlist.com/mcp/cortex) |
+| [**Vibes Coded MCP**](https://mcp-serverlist.com/mcp/mcp-server-vibes-coded) | @doteyeso-ops | [mcp-server-vibes-coded](https://github.com/doteyeso-ops/mcp-server-vibes-coded) | Python | `uvx mcp-server-vibes-coded` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-vibes-coded) |
+| [**Ragmap MCP**](https://mcp-serverlist.com/mcp/ragmap) | @khalidsaidi | [ragmap](https://github.com/khalidsaidi/ragmap) | Node.js | `npx -y khalidsaidi/ragmap` | [⚡ Config](https://mcp-serverlist.com/mcp/ragmap) |
+| [**Mcpjungle**](https://mcp-serverlist.com/mcp/mcpjungle) | @duaraghav8 | [MCPJungle](https://github.com/duaraghav8/MCPJungle) | Node.js | `npx -y duaraghav8/MCPJungle` | [⚡ Config](https://mcp-serverlist.com/mcp/mcpjungle) |
+| [**Rancher Mcp**](https://mcp-serverlist.com/mcp/rancher-mcp-server) | @mrostamii | [rancher-mcp-server](https://github.com/mrostamii/rancher-mcp-server) | Node.js | `npx -y mrostamii/rancher-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/rancher-mcp-server) |
+| [**Moltline MCP**](https://mcp-serverlist.com/mcp/moltline-mcp) | @GarphenGate | [moltline-mcp](https://github.com/GarphenGate/moltline-mcp) | Python | `uvx moltline-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/moltline-mcp) |
+| [**Nostrpulse Full MCP**](https://mcp-serverlist.com/mcp/nostrpulse-full) | @PHONGUIT22 | [nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full) | Node.js | `npx -y PHONGUIT22/nostrpulse-full` | [⚡ Config](https://mcp-serverlist.com/mcp/nostrpulse-full) |
+| [**Iwdp MCP**](https://mcp-serverlist.com/mcp/iwdp-mcp) | @nnemirovsky | [iwdp-mcp](https://github.com/nnemirovsky/iwdp-mcp) | Node.js | `npx -y nnemirovsky/iwdp-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/iwdp-mcp) |
+| [**Liveblocks Mcp**](https://mcp-serverlist.com/mcp/liveblocks-mcp-server) | @liveblocks | [liveblocks-mcp-server](https://github.com/liveblocks/liveblocks-mcp-server) | Node.js | `npx -y liveblocks/liveblocks-mcp-server` | [⚡ Config](https://mcp-serverlist.com/mcp/liveblocks-mcp-server) |
+| [**Ollama Bridge MCP**](https://mcp-serverlist.com/mcp/mcp-server-ollama-bridge) | @jaspertvdm | [mcp-server-ollama-bridge](https://github.com/jaspertvdm/mcp-server-ollama-bridge) | Python | `uvx mcp-server-ollama-bridge` | [⚡ Config](https://mcp-serverlist.com/mcp/mcp-server-ollama-bridge) |
+| [**4everland Hosting MCP**](https://mcp-serverlist.com/mcp/4everland-hosting-mcp) | @4everland | [4everland-hosting-mcp](https://github.com/4everland/4everland-hosting-mcp) | Node.js | `npx -y 4everland/4everland-hosting-mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/4everland-hosting-mcp) |
+| [**Universal Mcp Toolkit**](https://mcp-serverlist.com/mcp/universal-mcp-toolkit) | @Markgatcha | [universal-mcp-toolkit](https://github.com/Markgatcha/universal-mcp-toolkit) | Node.js | `npx -y Markgatcha/universal-mcp-toolkit` | [⚡ Config](https://mcp-serverlist.com/mcp/universal-mcp-toolkit) |
+| [**Omop Mcp**](https://mcp-serverlist.com/mcp/omop-mcp) | @OHNLP | [omop_mcp](https://github.com/OHNLP/omop_mcp) | Python | `uvx omop_mcp` | [⚡ Config](https://mcp-serverlist.com/mcp/omop-mcp) |
 
 ---
 
@@ -221,7 +786,7 @@ Explore the comprehensive and updated index on **[mcp-serverlist.com/category](h
 Are you authoring an open-source MCP server? Get discovered by thousands of developers experimenting with Claude Desktop, Cursor, and Windsurf!
 
 ### 1. Submit Your Server
-Submit your repository for fast indexing on **[mcp-serverlist.com/submit](https://mcp-serverlist.com/submit)**. Free community submissions are reviewed and listed promptly.
+Submit your repository for fast indexing on **[mcp-serverlist.com/submit](https://mcp-serverlist.com/submit)**. Free community submissions are reviewed and indexed promptly.
 
 ### 2. Add the Verified Listing Badge
 Show your users that your server is listed and verified on MCP ServerList by adding this badge to your `README.md`:
